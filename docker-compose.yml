@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: saude_api
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./api:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  dashboard_project:
+    build:
+      context: ./dashboard_project
+      dockerfile: Dockerfile
+    container_name: saude_dashboard
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./dashboard_project:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - api
