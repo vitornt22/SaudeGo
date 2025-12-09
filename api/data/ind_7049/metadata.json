@@ -1,0 +1,86 @@
+{
+    "data": "/get_dados_view/7049/",
+    "default_filter": [],
+    "em_homologacao": false,
+    "ficha": {
+        "categoria": [
+            [
+                1,
+                "Atenção"
+            ]
+        ],
+        "complemento": "<ul>\r\n<li>O indicador dever&aacute; ser produzido e monitorado pela equipe de Farm&aacute;cia Cl&iacute;nica para avalia&ccedil;&atilde;o de desempenho das atividades desenvolvidas;</li>\r\n<li>&Eacute; imprescind&iacute;vel a an&aacute;lise mensal do indicador, o acompanhamento e monitoramento peri&oacute;dico e o estabelecimento de plano de a&ccedil;&atilde;o para melhoria do resultado do indicador;</li>\r\n<li>Hospitais: Periodicidade Mensal.</li>\r\n</ul>",
+        "data_especial": [],
+        "dicas_gestor": "",
+        "fonte": "<ul>\r\n<li>Sistema de Gest&atilde;o Ambulatorial e Hospitalar.</li>\r\n</ul>",
+        "formula_ficha": "<p>[N&uacute;mero de interven&ccedil;&otilde;es aceitas &divide; N&uacute;mero absoluto de interven&ccedil;&otilde;es registradas que requer aceita&ccedil;&atilde;o] &times; 100</p>",
+        "limitacoes": "<ul>\r\n<li>Falta de registro das interven&ccedil;&otilde;es realizadas;</li>\r\n<li>Falta de avalia&ccedil;&atilde;o e registro das interven&ccedil;&otilde;es aceitas.&nbsp;&nbsp;</li>\r\n</ul>",
+        "referencias": "<ul>\r\n<li><a href=\"https://rbfhss.org.br/sbrafh/article/view/766/660\" target=\"_blank\" rel=\"noopener\">Colin, SL, Nutti, C. Pharmaceutical intervention: Description of the role of the clinical pharmacist in intensive care units. Rev Bras Farm Hosp Serv Sa&uacute;de. 2022;13(2):0766.</a></li>\r\n<li><a href=\"https://revistas.cff.org.br/?journal=infarma&amp;page=article&amp;op=view&amp;path%5B%5D=2967\" target=\"_blank\" rel=\"noopener\">ANDRADE ALMEIDA, Jullye Christye; FREITAS DE ANDRADE, Kaio Vinicius. Interven&ccedil;&otilde;es&nbsp; farmac&ecirc;uticas para a promo&ccedil;&atilde;o do uso racional de medicamentos em hospitais: uma revis&atilde;o.&nbsp;Infarma - Ci&ecirc;ncias Farmac&ecirc;uticas, [S.l.], v. 34, n. 1, p. 13-24, apr. 2022.&nbsp;</a></li>\r\n</ul>",
+        "resumo": "<p>Indicador que mensura a taxa de aceitabilidade das interven&ccedil;&otilde;es farmac&ecirc;uticas decorrentes de problemas relacionados a medicamentos.</p>",
+        "usos": "<ul>\r\n<li>O monitoramento da aceitabilidade das interven&ccedil;&otilde;es farmac&ecirc;uticas &eacute; necess&aacute;rio para avalia&ccedil;&atilde;o do impacto do servi&ccedil;o de farm&aacute;cia cl&iacute;nica na qualidade da assist&ecirc;ncia prestada ao paciente proporcionando maior seguran&ccedil;a e otimiza&ccedil;&atilde;o da farmacoterapia;</li>\r\n<li>Esse indicador &eacute; &uacute;til para avaliar o desempenho do servi&ccedil;o de farm&aacute;cia cl&iacute;nica e a import&acirc;ncia desse servi&ccedil;o para a seguran&ccedil;a do paciente atrav&eacute;s da preven&ccedil;&atilde;o e/ou resolu&ccedil;&atilde;o de problemas relacionados a medicamentos.</li>\r\n</ul>"
+    },
+    "filtros": [
+        {
+            "descricao": "Filtro Temporal, ou seja se refere à datas, especificamente aos anos.",
+            "id_filtro": 7,
+            "nome_filtro": "Ano",
+            "options": [
+                {
+                    "id_option": 2015.0,
+                    "nome_option": "2015"
+                },
+                {
+                    "id_option": 2016.0,
+                    "nome_option": "2016"
+                },
+                {
+                    "id_option": 2017.0,
+                    "nome_option": "2017"
+                },
+                {
+                    "id_option": 2018.0,
+                    "nome_option": "2018"
+                },
+                {
+                    "id_option": 2019.0,
+                    "nome_option": "2019"
+                },
+                {
+                    "id_option": 2020.0,
+                    "nome_option": "2020"
+                },
+                {
+                    "id_option": 2021.0,
+                    "nome_option": "2021"
+                },
+                {
+                    "id_option": 2022.0,
+                    "nome_option": "2022"
+                },
+                {
+                    "id_option": 2023.0,
+                    "nome_option": "2023"
+                },
+                {
+                    "id_option": 2024.0,
+                    "nome_option": "2024"
+                },
+                {
+                    "id_option": 2025.0,
+                    "nome_option": "2025"
+                },
+                {
+                    "id_option": 2026.0,
+                    "nome_option": "2026"
+                }
+            ]
+        }
+    ],
+    "id": 7049,
+    "nome": "Taxa de Aceitabilidade das Intervenções Farmacêuticas - Por Ano",
+    "option_echarts": "{\n            \"tooltip\": {\n                \"trigger\": \"axis\",\n                \"showDelay\": 0,\n                \"transitionDuration\": 0.2,\n                \"valueFormatter\": function (value) {\n                    return value.toLocaleString(\"pt-BR\");\n                }  \n            },\n            \"xAxis\": {\n                \"type\": \"category\",\n                \"data\": [],\n                \"name\": \"\",\n                \"nameLocation\" : \"center\",\n                \"nameGap\": 25\n            },\n            \"yAxis\": {\n                \"type\": \"value\",\n                \"name\": \"\",\n                \"nameLocation\": \"center\",\n                \"nameGap\": 50,\n                \"nameRotate\": 90\n            },\n            \"series\": [{\n                \"id\": \"1\",\n                \"name\": \"\",\n                \"data\": [],\n                \"type\": \"line\",\n                \"label\": {\n                    \"show\": false\n                }\n            }]\n        }",
+    "sufixo": " - Por Ano",
+    "tipo_viz": null,
+    "update_date": "2025-11-09T00:17:18",
+    "viz": "Série Histórica Simples"
+}

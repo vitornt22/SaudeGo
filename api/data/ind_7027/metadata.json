@@ -1,0 +1,314 @@
+{
+    "data": "/get_dados_view/7027/",
+    "default_filter": [
+        {
+            "id_filtro": 7,
+            "id_option": [
+                2025.0
+            ]
+        }
+    ],
+    "em_homologacao": false,
+    "ficha": {
+        "categoria": [
+            [
+                5,
+                "Vigilância"
+            ]
+        ],
+        "complemento": "<ul>\r\n<li style=\"text-align: justify;\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">Os tr&ecirc;s fatores</span> <span lang=\"pt-BR\">determinantes e condicionantes desse indicador de sa&uacute;de: &aacute;gua, saneamento e higiene s&atilde;o conhecidos pelo acr&ocirc;nimo em ingl&ecirc;s WASH (Water, Sanitation and Hygiene), sendo o termo &ldquo;saneamento&rdquo; definido pela Organiza&ccedil;&atilde;o Mundia de sa&uacute;de (OMS) como acesso e uso de instala&ccedil;&otilde;es e servi&ccedil;os para elimina&ccedil;&atilde;o segura de urina e fezes humana.</span></span></span></li>\r\n<li style=\"text-align: justify;\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">Para </span><span lang=\"pt-BR\">avalia&ccedil;&atilde;o desse indicador, &eacute; poss&iacute;vel obter a taxa de mortalidade por servi&ccedil;os inadequados de WASH, cuja causa b&aacute;sica </span><span lang=\"pt-BR\">correspondem aos seguintes c&oacute;digos da CID-10:</span></span></span></li>\r\n</ul>\r\n<ul style=\"list-style-type: circle;\">\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A00: C&oacute;lera;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A01 &ndash; Febres tif&oacute;ide e paratif&oacute;ide;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A03 &ndash; Shiguelose;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A04 &ndash; Outras infec&ccedil;&otilde;es intestinais bacterianas;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A06 &ndash; Ameb&iacute;ase;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A07 &ndash; Outras doen&ccedil;as intestinais por protozo&aacute;rios;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A08 &ndash; Infec&ccedil;&otilde;es intestinais virais, Outras e as n&atilde;o especificadas;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">A09 &ndash; Diarreia e gastroenterite de origem infecciosa presum&iacute;vel;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">B76 &ndash; Ancilostom&iacute;ase;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">B77 &ndash; Ascarid&iacute;ase;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">B79 &ndash; Tricur&iacute;ase;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">E40 &ndash; Kwashiorkor;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">E41 &ndash; Marasmo nutricional;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">E42 &ndash; Kwashiorkor marasm&aacute;tico;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">E43 &ndash; Desnutri&ccedil;&atilde;o proteico-cal&oacute;rica grave n&atilde;o especificada;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">E44 &ndash; Desnutri&ccedil;&atilde;o proteico-cal&oacute;rica de graus moderado e leve;</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">E45 &ndash; Atraso do desenvolvimento devido &agrave; desnutri&ccedil;&atilde;o proteico-cal&oacute;rica e</span></span></span></li>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">E46 &ndash; Desnutri&ccedil;&atilde;o proteico-cal&oacute;rica n&atilde;o especificada. </span></span></span></li>\r\n</ul>\r\n<ul>\r\n<li style=\"text-align: justify;\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">Ainda d</span><span lang=\"pt-BR\">e acordo com OMS, a desnutri&ccedil;&atilde;o est&aacute; relacionada com a ocorr&ecirc;ncia de diarreia, evidenciando a rela&ccedil;&atilde;o intr&iacute;nseca entre potenciais efeitos &agrave; sa&uacute;de relacionados a WASH.</span></span></span></li>\r\n</ul>",
+        "data_especial": [],
+        "dicas_gestor": "",
+        "fonte": "<ul>\r\n<li><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">Sistema de Informa&ccedil;&otilde;es sobre Mortalidade (SIM);</span></span></span></li>\r\n<li><span style=\"font-size: large; font-family: Arial, sans-serif;\">Instituto Brasileiro de Geografia e Estat&iacute;stica (IBGE).</span></li>\r\n</ul>",
+        "formula_ficha": "<p style=\"text-align: justify;\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\">N&uacute;mero total de &oacute;bitos atribu&iacute;dos a fontes de &aacute;gua inseguras, saneamento inseguro e falta de higiene em determinado local, no per&iacute;odo considerado <span style=\"font-family: Liberation Serif, serif;\">&divide;</span> N&uacute;mero total de habitantes x 100.000</span></span></p>",
+        "limitacoes": "<ul>\r\n<li><span style=\"color: #212529;\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\">Subnotifica&ccedil;&atilde;o de &oacute;bitos no Sistema de Informa&ccedil;&atilde;o sobre Mortalidade.</span></span></span></li>\r\n</ul>",
+        "referencias": "<p style=\"text-align: justify;\"><a href=\"https://odsbrasil.gov.br/objetivo3/indicador392\" target=\"_blank\" rel=\"noopener\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\">Brasil. Minist&eacute;rio da Sa&uacute;de. Secretaria de Vigil&acirc;ncia em Sa&uacute;de e Ambiente. Vigil&acirc;ncia em Sa&uacute;de Ambiental na Perspectiva da Agenda 2030. N&uacute;mero especial. Bras&iacute;lia/DF 2023.</span></span></a></p>",
+        "resumo": "<p style=\"text-align: justify;\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">N&uacute;mero total de &oacute;bitos atribu&iacute;dos </span><span lang=\"pt-BR\">a fontes de &aacute;gua inseguras, saneamento inseguro e falta de higiene,</span><span lang=\"pt-BR\"> por 100 mil habitantes, em determinado espa&ccedil;o geogr&aacute;fico, no ano considerado.</span></span></span></p>",
+        "usos": "<ul>\r\n<li style=\"text-align: justify;\"><span style=\"font-family: Arial, sans-serif;\"><span style=\"font-size: large;\"><span lang=\"pt-BR\">Analisar as vari&aacute;veis referentes a mortalidade atribu&iacute;da </span><span lang=\"pt-BR\">servi&ccedil;os inadequados de </span><span lang=\"pt-BR\">WASH;</span></span></span></li>\r\n<li style=\"text-align: justify;\"><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\">Subsidiar a&ccedil;&otilde;es de planejamento e gest&atilde;o para reduzir substancialmente o n&uacute;mero de mortes e doen&ccedil;as </span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\">decorrentes da falta de acesso a </span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\"> &aacute;gua </span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\">pot&aacute;vel</span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\"> e estruturas de saneamento </span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\">ina</span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\">dequadas;</span></li>\r\n<li style=\"text-align: justify;\"><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\">Contribuir para o </span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\"> planejamento e gest&atilde;o tamb&eacute;m </span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\">de a&ccedil;&otilde;es voltadas ao</span><span lang=\"pt-BR\" style=\"font-size: large; font-family: Arial, sans-serif;\"> fortalecimento dos servi&ccedil;os de sa&uacute;de, pois entende-se que grande parte das mortes ocasionadas pelas doen&ccedil;as relacionadas aos servi&ccedil;os inadequados de WASH s&atilde;o consideradas evit&aacute;veis se houver acesso em tempo oportuno a servi&ccedil;os de sa&uacute;de resolutivos e qualificados.</span></li>\r\n</ul>"
+    },
+    "filtros": [
+        {
+            "descricao": "Filtro Temporal, ou seja se refere à datas, especificamente aos anos.",
+            "id_filtro": 7,
+            "nome_filtro": "Ano",
+            "options": [
+                {
+                    "id_option": 1996.0,
+                    "nome_option": "1996"
+                },
+                {
+                    "id_option": 1997.0,
+                    "nome_option": "1997"
+                },
+                {
+                    "id_option": 1998.0,
+                    "nome_option": "1998"
+                },
+                {
+                    "id_option": 1999.0,
+                    "nome_option": "1999"
+                },
+                {
+                    "id_option": 2000.0,
+                    "nome_option": "2000"
+                },
+                {
+                    "id_option": 2001.0,
+                    "nome_option": "2001"
+                },
+                {
+                    "id_option": 2003.0,
+                    "nome_option": "2003"
+                },
+                {
+                    "id_option": 2004.0,
+                    "nome_option": "2004"
+                },
+                {
+                    "id_option": 2005.0,
+                    "nome_option": "2005"
+                },
+                {
+                    "id_option": 2007.0,
+                    "nome_option": "2007"
+                },
+                {
+                    "id_option": 2010.0,
+                    "nome_option": "2010"
+                },
+                {
+                    "id_option": 2011.0,
+                    "nome_option": "2011"
+                },
+                {
+                    "id_option": 2012.0,
+                    "nome_option": "2012"
+                },
+                {
+                    "id_option": 2013.0,
+                    "nome_option": "2013"
+                },
+                {
+                    "id_option": 2014.0,
+                    "nome_option": "2014"
+                },
+                {
+                    "id_option": 2019.0,
+                    "nome_option": "2019"
+                },
+                {
+                    "id_option": 2021.0,
+                    "nome_option": "2021"
+                },
+                {
+                    "id_option": 2022.0,
+                    "nome_option": "2022"
+                },
+                {
+                    "id_option": 2023.0,
+                    "nome_option": "2023"
+                },
+                {
+                    "id_option": 2024.0,
+                    "nome_option": "2024"
+                },
+                {
+                    "id_option": 2025.0,
+                    "nome_option": "2025"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente aos municípios do estado de Goiás.",
+            "id_filtro": 1,
+            "nome_filtro": "Município",
+            "options": [
+                {
+                    "id_option": 520025,
+                    "nome_option": "Águas Lindas de Goiás"
+                },
+                {
+                    "id_option": 520110,
+                    "nome_option": "Anápolis"
+                },
+                {
+                    "id_option": 520140,
+                    "nome_option": "Aparecida de Goiânia"
+                },
+                {
+                    "id_option": 520350,
+                    "nome_option": "Bom Jesus de Goiás"
+                },
+                {
+                    "id_option": 520425,
+                    "nome_option": "Cachoeira Dourada"
+                },
+                {
+                    "id_option": 520440,
+                    "nome_option": "Caiapônia"
+                },
+                {
+                    "id_option": 520450,
+                    "nome_option": "Caldas Novas"
+                },
+                {
+                    "id_option": 520549,
+                    "nome_option": "Cidade Ocidental"
+                },
+                {
+                    "id_option": 520590,
+                    "nome_option": "Corumbaíba"
+                },
+                {
+                    "id_option": 520780,
+                    "nome_option": "Firminópolis"
+                },
+                {
+                    "id_option": 520800,
+                    "nome_option": "Formosa"
+                },
+                {
+                    "id_option": 520870,
+                    "nome_option": "Goiânia"
+                },
+                {
+                    "id_option": 521010,
+                    "nome_option": "Ipameri"
+                },
+                {
+                    "id_option": 521150,
+                    "nome_option": "Itumbiara"
+                },
+                {
+                    "id_option": 521375,
+                    "nome_option": "Montividiu"
+                },
+                {
+                    "id_option": 521380,
+                    "nome_option": "Morrinhos"
+                },
+                {
+                    "id_option": 521450,
+                    "nome_option": "Nerópolis"
+                },
+                {
+                    "id_option": 521640,
+                    "nome_option": "Paraúna"
+                },
+                {
+                    "id_option": 521760,
+                    "nome_option": "Planaltina"
+                },
+                {
+                    "id_option": 521880,
+                    "nome_option": "Rio Verde"
+                },
+                {
+                    "id_option": 521960,
+                    "nome_option": "Santa Tereza de Goiás"
+                },
+                {
+                    "id_option": 522068,
+                    "nome_option": "Simolândia"
+                },
+                {
+                    "id_option": 522140,
+                    "nome_option": "Trindade"
+                },
+                {
+                    "id_option": 522185,
+                    "nome_option": "Valparaíso de Goiás"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente às Regiões de Saúde do estado de Goiás.",
+            "id_filtro": 2,
+            "nome_filtro": "Região de Saúde",
+            "options": [
+                {
+                    "id_option": 1,
+                    "nome_option": "Central"
+                },
+                {
+                    "id_option": 3,
+                    "nome_option": "Centro Sul"
+                },
+                {
+                    "id_option": 7,
+                    "nome_option": "Entorno Norte"
+                },
+                {
+                    "id_option": 6,
+                    "nome_option": "Entorno Sul"
+                },
+                {
+                    "id_option": 12,
+                    "nome_option": "Estrada de Ferro"
+                },
+                {
+                    "id_option": 10,
+                    "nome_option": "Nordeste II"
+                },
+                {
+                    "id_option": 15,
+                    "nome_option": "Norte"
+                },
+                {
+                    "id_option": 16,
+                    "nome_option": "Oeste II"
+                },
+                {
+                    "id_option": 5,
+                    "nome_option": "Pireneus"
+                },
+                {
+                    "id_option": 2,
+                    "nome_option": "Sudoeste I"
+                },
+                {
+                    "id_option": 8,
+                    "nome_option": "Sudoeste II"
+                },
+                {
+                    "id_option": 17,
+                    "nome_option": "Sul"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente às Macrorregiões do estado de Goiás.",
+            "id_filtro": 3,
+            "nome_filtro": "Macrorregião",
+            "options": [
+                {
+                    "id_option": 1,
+                    "nome_option": "Centro Norte"
+                },
+                {
+                    "id_option": 4,
+                    "nome_option": "Centro Oeste"
+                },
+                {
+                    "id_option": 5,
+                    "nome_option": "Centro Sudeste"
+                },
+                {
+                    "id_option": 3,
+                    "nome_option": "Nordeste"
+                },
+                {
+                    "id_option": 2,
+                    "nome_option": "Sudoeste"
+                }
+            ]
+        }
+    ],
+    "id": 7027,
+    "nome": "Taxa de Mortalidade Atribuída a Fontes de Água Inseguras, Saneamento Inseguro e Falta de Higiene - Por Ano",
+    "option_echarts": "{\n            \"tooltip\": {\n                \"trigger\": \"axis\",\n                \"showDelay\": 0,\n                \"transitionDuration\": 0.2,\n                \"valueFormatter\": function (value) {\n                    return value.toLocaleString(\"pt-BR\");\n                }  \n            },\n            \"xAxis\": {\n                \"type\": \"category\",\n                \"data\": [],\n                \"name\": \"\",\n                \"nameLocation\" : \"center\",\n                \"nameGap\": 25\n            },\n            \"yAxis\": {\n                \"type\": \"value\",\n                \"name\": \"\",\n                \"nameLocation\": \"center\",\n                \"nameGap\": 50,\n                \"nameRotate\": 90\n            },\n            \"series\": [{\n                \"id\": \"1\",\n                \"name\": \"\",\n                \"data\": [],\n                \"type\": \"line\",\n                \"label\": {\n                    \"show\": false\n                }\n            }]\n        }",
+    "sufixo": " - Por Ano",
+    "tipo_viz": null,
+    "update_date": "2025-11-09T00:12:33",
+    "viz": "Série Histórica Simples"
+}

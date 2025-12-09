@@ -1,0 +1,231 @@
+{
+    "data": "/get_dados_view/7046/",
+    "default_filter": [],
+    "em_homologacao": false,
+    "ficha": {
+        "categoria": [
+            [
+                5,
+                "Vigilância"
+            ]
+        ],
+        "complemento": "<p align=\"left\"><strong>C&oacute;digo CID-10: F99</strong></p>\r\n<p>Vari&aacute;veis sugeridas para an&aacute;lise:</p>\r\n<ul>\r\n<li>Faixa et&aacute;ria: (0-14; 15-19; 20-42; 25-29; 30-34; 35-39; 40-44; 45-49; 50-54; 55-59; 60-64; 65-69; 70-74; 75-79; 80 anos ou mais);</li>\r\n<li>Sexo: masculino; feminino e ignorado;</li>\r\n<li>Ra&ccedil;a/cor: branca; preta; amarela; parda; ind&iacute;gena e ignorado;</li>\r\n<li>Escolaridade: analfabeto; 1&ordf; a 4&ordf; s&eacute;rie incompleta do Ensino Fundamental; 2&ordf; a 4&ordf; completa do Ensino Fundamental; 5&ordf; a 8&ordf; S&eacute;rie incompleta do Ensino Fundamental; Ensino Fundamental Completo; Ensino M&eacute;dio Incompleto; Ensino M&eacute;dio Completo; Educa&ccedil;&atilde;o Superior Incompleta; Educa&ccedil;&atilde;o Superior Completa; Ignorada e N&atilde;o se aplica);</li>\r\n<li>Unidade notificadora: todas as op&ccedil;&otilde;es dispon&iacute;veis;</li>\r\n<li>Munic&iacute;pio de resid&ecirc;ncia: todos os munic&iacute;pios do pa&iacute;s;</li>\r\n<li>Grupo de ocupa&ccedil;&otilde;es: todas as ocupa&ccedil;&otilde;es dispon&iacute;veis;</li>\r\n<li>Situa&ccedil;&atilde;o no mercado de trabalho: Empregado registrado com carteira assinada; Empregado n&atilde;o registrado; Aut&ocirc;nomo/ conta pr&oacute;pria; Servidor p&uacute;blico estatut&aacute;rio; Servidor p&uacute;blico celetista; Aposentado; Desempregado; Trabalho tempor&aacute;rio; Cooperativado; Trabalhador Avulso; Empregador; Outros e Ignorados.</li>\r\n<li>Se&ccedil;&atilde;o da Classifica&ccedil;&atilde;o Nacional de Atividades Econ&ocirc;micas -CNAE: todas as op&ccedil;&otilde;es dispon&iacute;veis;</li>\r\n<li>Diagn&oacute;stico espec&iacute;fico: (F00-F99) Transtornos mentais e comportamentais; (Y90 e Y91) Alcoolismo; (Z73.0) S&iacute;ndrome de burnout; (R40 a R46) Sintomas e sinais relativos &agrave; cogni&ccedil;&atilde;o, &agrave; percep&ccedil;&atilde;o, ao estado emocional e ao comportamento; (Z55 Z65) Pessoas com riscos potenciais &agrave; sa&uacute;de relacionados com circunst&acirc;ncias socioecon&ocirc;micas e psicossociais; (Y96) Circunst&acirc;ncia relativa &agrave;s condi&ccedil;&otilde;es de trabalho e (X60 a X84) Les&atilde;o autoprovocada intencionalmente;</li>\r\n<li>Conduta adotada: Afastamento da situa&ccedil;&atilde;o de desgaste mental; Ado&ccedil;&atilde;o de prote&ccedil;&atilde;o individual; Ado&ccedil;&atilde;o de mudan&ccedil;a na organiza&ccedil;&atilde;o do trabalho; Ado&ccedil;&atilde;o de prote&ccedil;&atilde;o coletiva e Afastamento do local de trabalho;</li>\r\n<li>Emiss&atilde;o de Comunicado de Acidente de Trabalho (CAT): Sim; N&atilde;o; Ign/Branco e N&atilde;o se aplica;</li>\r\n<li>Encaminhamento para tratamento em CAPS: Sim; N&atilde;o e Ignorado/branco;</li>\r\n<li>Evolu&ccedil;&atilde;o do caso: cura; cura n&atilde;o confirmada; incapacidade tempor&aacute;ria; incapacidade permanente parcial; incapacidade permanente total; &oacute;bito por doen&ccedil;a relacionada ao trabalho; &oacute;bito por outra causa, outro e ignorado.</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+        "data_especial": [],
+        "dicas_gestor": "",
+        "fonte": "<ul>\r\n<li>SINANNET - Sistema de Informa&ccedil;&atilde;o de Agravos de Notifica&ccedil;&atilde;o.</li>\r\n</ul>",
+        "formula_ficha": "<p><span style=\"font-family: Calibri, serif;\">N&uacute;mero de Notifica&ccedil;&otilde;es de Transtornos Mentais Relacionados ao Trabalho de Cada Vari&aacute;vel L</span><span style=\"font-family: Calibri, serif;\">istada no Campo &ldquo;Complementos&rdquo;&nbsp;</span></p>",
+        "limitacoes": "<ul>\r\n<li>Exige, em geral, a realiza&ccedil;&atilde;o de nexo causal entre o adoecimento e o trabalho;</li>\r\n<li>Deve-se considerar, na an&aacute;lise dos dados, a capacidade diagn&oacute;stica dos servi&ccedil;os de sa&uacute;de;</li>\r\n<li>Falhas na alimenta&ccedil;&atilde;o da informa&ccedil;&atilde;o no sistema utilizado para a obten&ccedil;&atilde;o dos dados na origem (SINAN) podem interferir nos resultados e exigem cautela na interpreta&ccedil;&atilde;o.</li>\r\n</ul>",
+        "referencias": "<ul>\r\n<li style=\"text-align: justify;\"><a href=\"chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://bvsms.saude.gov.br/bvs/publicacoes/doencas_relacionadas_trabalho_manual_procedimentos.pdf\" target=\"_blank\" rel=\"noopener\"><span style=\"color: #000000;\"><span style=\"font-size: small;\">BRASIL. Minist&eacute;rio da Sa&uacute;de. Representa&ccedil;&atilde;o no Brasil da OPAS / OMS.</span></span><span style=\"color: #000000;\"><span style=\"font-size: small;\"><strong> Doen&ccedil;as relacionadas ao trabalho: manual de procedimentos para os servi&ccedil;os de sa&uacute;de.</strong></span></span><span style=\"color: #000000;\"><span style=\"font-size: small;\"> Organizado por Elizabeth Costa Dias; colaboradores Idelberto Muniz et al. (S&eacute;rie A. Normas e Manuais T&eacute;cnicos; n. 114). Bras&iacute;lia, 2001.</span></span></a></li>\r\n<li style=\"text-align: justify;\"><a href=\"chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://bvsms.saude.gov.br/bvs/publicacoes/sistema_informacao_agravos_notificacao_sinan.pdf\" target=\"_blank\" rel=\"noopener\"><span style=\"color: #000000;\"><span style=\"font-size: small;\">BRASIL. Minist&eacute;rio da Sa&uacute;de. Secretaria de Vigil&acirc;ncia em Sa&uacute;de. Departamento de Vigil&acirc;ncia Epidemiol&oacute;gica.</span></span><span style=\"color: #000000;\"><span style=\"font-size: small;\"><strong> Sistema de Informa&ccedil;&atilde;o de Agravo de Notifica&ccedil;&atilde;o &ndash; SINAN: Normas e Rotinas.</strong></span></span><span style=\"color: #000000;\"><span style=\"font-size: small;\"> 2 ed. Bras&iacute;lia: Editora do Minist&eacute;rio da Sa&uacute;de, 2007.</span></span></a></li>\r\n<li style=\"text-align: justify;\"><a href=\"chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/http://portalsinan.saude.gov.br/images/documentos/Legislacoes/Portaria_Consolidacao_5_28_SETEMBRO_2017.pdf\" target=\"_blank\" rel=\"noopener\"><span style=\"font-size: small;\">BRASIL .Minist&eacute;rio da Sa&uacute;de. </span><span style=\"font-size: small;\"><strong>Portaria de Consolida&ccedil;&atilde;o N&ordm; 5, de 28 de setembro de 2017. </strong></span><span style=\"font-size: small;\">Consolida&ccedil;&atilde;o das normas sobre as a&ccedil;&otilde;es e os servi&ccedil;os de sa&uacute;de do Sistema &Uacute;nico de Sa&uacute;de. Di&aacute;rio Oficial da Uni&atilde;o, Bras&iacute;lia, DF, n. 190, 3 de outubro de 2017. Se&ccedil;&atilde;o 1, p. 360.</span></a></li>\r\n<li style=\"text-align: justify;\"><a href=\"chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.saude.go.gov.br/files/saude-do-trabalhador/cerest/portarias/diretrizes-diagnosticas-e-terapeuticas-para-transtornos-mentais-relacionados-ao-trabalho.pdf\" target=\"_blank\" rel=\"noopener\"><span style=\"color: #000000;\"><span style=\"font-size: small;\">GOI&Aacute;S. Governo do Estado.</span></span><span style=\"color: #000000;\"><span style=\"font-size: small;\"><strong> Portaria N&ordm; 1128 de 28 de dezembro de 2018.</strong></span></span><span style=\"color: #000000;\"><span style=\"font-size: small;\"> Aprova as Diretrizes Diagn&oacute;sticas e Terap&ecirc;uticas para Transtornos Mentais relacionados ao Trabalho. Di&aacute;rio Oficial do Estado de Goi&aacute;s, Goi&acirc;nia, quarta-feira, 02 de janeiro de 2019, Ano 182 - Di&aacute;rio Oficial/GO N&deg; 22.963 p. 23.</span></span></a></li>\r\n</ul>",
+        "resumo": "<p>N&uacute;mero absoluto de casos notificados de Transtornos Mentais Relacionados ao Trabalho (TMRT), em determinado espa&ccedil;o geogr&aacute;fico, no per&iacute;odo considerado.</p>",
+        "usos": "<ul>\r\n<li>Analisar varia&ccedil;&otilde;es geogr&aacute;ficas na distribui&ccedil;&atilde;o dos casos de Transtornos Mentais Relacionados ao Trabalho;</li>\r\n<li>Contribuir para a orienta&ccedil;&atilde;o e avalia&ccedil;&atilde;o das a&ccedil;&otilde;es voltadas a sa&uacute;de mental do trabalhador;</li>\r\n<li>Subsidiar processos de planejamento, gest&atilde;o e avalia&ccedil;&atilde;o de pol&iacute;ticas e a&ccedil;&otilde;es de sa&uacute;de direcionadas &agrave; sa&uacute;de mental do trabalhador.</li>\r\n</ul>"
+    },
+    "filtros": [
+        {
+            "descricao": "Filtro Temporal, ou seja se refere à datas, especificamente aos anos.",
+            "id_filtro": 7,
+            "nome_filtro": "Ano",
+            "options": [
+                {
+                    "id_option": 2015.0,
+                    "nome_option": "2015"
+                },
+                {
+                    "id_option": 2016.0,
+                    "nome_option": "2016"
+                },
+                {
+                    "id_option": 2017.0,
+                    "nome_option": "2017"
+                },
+                {
+                    "id_option": 2018.0,
+                    "nome_option": "2018"
+                },
+                {
+                    "id_option": 2019.0,
+                    "nome_option": "2019"
+                },
+                {
+                    "id_option": 2020.0,
+                    "nome_option": "2020"
+                },
+                {
+                    "id_option": 2021.0,
+                    "nome_option": "2021"
+                },
+                {
+                    "id_option": 2022.0,
+                    "nome_option": "2022"
+                },
+                {
+                    "id_option": 2023.0,
+                    "nome_option": "2023"
+                },
+                {
+                    "id_option": 2024.0,
+                    "nome_option": "2024"
+                },
+                {
+                    "id_option": 2025.0,
+                    "nome_option": "2025"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente aos municípios do estado de Goiás.",
+            "id_filtro": 1,
+            "nome_filtro": "Município",
+            "options": [
+                {
+                    "id_option": 520110,
+                    "nome_option": "Anápolis"
+                },
+                {
+                    "id_option": 520140,
+                    "nome_option": "Aparecida de Goiânia"
+                },
+                {
+                    "id_option": 520410,
+                    "nome_option": "Cachoeira Alta"
+                },
+                {
+                    "id_option": 520510,
+                    "nome_option": "Catalão"
+                },
+                {
+                    "id_option": 520540,
+                    "nome_option": "Ceres"
+                },
+                {
+                    "id_option": 520551,
+                    "nome_option": "Cocalzinho de Goiás"
+                },
+                {
+                    "id_option": 520580,
+                    "nome_option": "Corumbá de Goiás"
+                },
+                {
+                    "id_option": 520790,
+                    "nome_option": "Flores de Goiás"
+                },
+                {
+                    "id_option": 520800,
+                    "nome_option": "Formosa"
+                },
+                {
+                    "id_option": 520870,
+                    "nome_option": "Goiânia"
+                },
+                {
+                    "id_option": 520890,
+                    "nome_option": "Goiás"
+                },
+                {
+                    "id_option": 521150,
+                    "nome_option": "Itumbiara"
+                },
+                {
+                    "id_option": 521730,
+                    "nome_option": "Pirenópolis"
+                },
+                {
+                    "id_option": 521870,
+                    "nome_option": "Rianápolis"
+                },
+                {
+                    "id_option": 521880,
+                    "nome_option": "Rio Verde"
+                },
+                {
+                    "id_option": 521930,
+                    "nome_option": "Santa Helena de Goiás"
+                },
+                {
+                    "id_option": 521975,
+                    "nome_option": "Santo Antônio do Descoberto"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente às Regiões de Saúde do estado de Goiás.",
+            "id_filtro": 2,
+            "nome_filtro": "Região de Saúde",
+            "options": [
+                {
+                    "id_option": 1,
+                    "nome_option": "Central"
+                },
+                {
+                    "id_option": 3,
+                    "nome_option": "Centro Sul"
+                },
+                {
+                    "id_option": 7,
+                    "nome_option": "Entorno Norte"
+                },
+                {
+                    "id_option": 6,
+                    "nome_option": "Entorno Sul"
+                },
+                {
+                    "id_option": 12,
+                    "nome_option": "Estrada de Ferro"
+                },
+                {
+                    "id_option": 5,
+                    "nome_option": "Pireneus"
+                },
+                {
+                    "id_option": 11,
+                    "nome_option": "Rio Vermelho"
+                },
+                {
+                    "id_option": 14,
+                    "nome_option": "São Patrício I"
+                },
+                {
+                    "id_option": 2,
+                    "nome_option": "Sudoeste I"
+                },
+                {
+                    "id_option": 17,
+                    "nome_option": "Sul"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente às Macrorregiões do estado de Goiás.",
+            "id_filtro": 3,
+            "nome_filtro": "Macrorregião",
+            "options": [
+                {
+                    "id_option": 1,
+                    "nome_option": "Centro Norte"
+                },
+                {
+                    "id_option": 4,
+                    "nome_option": "Centro Oeste"
+                },
+                {
+                    "id_option": 5,
+                    "nome_option": "Centro Sudeste"
+                },
+                {
+                    "id_option": 3,
+                    "nome_option": "Nordeste"
+                },
+                {
+                    "id_option": 2,
+                    "nome_option": "Sudoeste"
+                }
+            ]
+        }
+    ],
+    "id": 7046,
+    "nome": "Número de Notificações de Transtornos Mentais Relacionados ao Trabalho - Por Ano",
+    "option_echarts": "{\n            \"tooltip\": {\n                \"trigger\": \"axis\",\n                \"showDelay\": 0,\n                \"transitionDuration\": 0.2,\n                \"valueFormatter\": function (value) {\n                    return value.toLocaleString(\"pt-BR\");\n                }  \n            },\n            \"xAxis\": {\n                \"type\": \"category\",\n                \"data\": [],\n                \"name\": \"Ano\",\n                \"nameLocation\" : \"center\",\n                \"nameGap\": 25\n            },\n            \"yAxis\": {\n                \"type\": \"value\",\n                \"name\": \"Número de Notificações\",\n                \"nameLocation\": \"center\",\n                \"nameGap\": 50,\n                \"nameRotate\": 90\n            },\n            \"series\": [{\n                \"id\": \"1\",\n                \"name\": \"\",\n                \"data\": [],\n                \"type\": \"line\",\n                \"label\": {\n                    \"show\": false\n                }\n            }]\n        }",
+    "sufixo": " - Por Ano",
+    "tipo_viz": null,
+    "update_date": "2025-11-09T00:10:36",
+    "viz": "Série Histórica Simples"
+}

@@ -1,0 +1,1270 @@
+{
+    "data": "/get_dados_view/7038/",
+    "default_filter": [
+        {
+            "id_filtro": 7,
+            "id_option": [
+                2025.0
+            ]
+        }
+    ],
+    "em_homologacao": false,
+    "ficha": {
+        "categoria": [
+            [
+                1,
+                "Atenção"
+            ]
+        ],
+        "complemento": "<ul>\r\n<li>O resultado reflete a propor&ccedil;&atilde;o de partos vaginais no per&iacute;odo de interesse. A passagem pelo canal de parto pode contribuir para as fun&ccedil;&otilde;es respirat&oacute;rias do rec&eacute;m-nascido e o desenvolvimento de seu sistema imunol&oacute;gico. Al&eacute;m disso, o trabalho de parto estimula a libera&ccedil;&atilde;o de ocitocina, que favorece a amamenta&ccedil;&atilde;o;</li>\r\n<li>De acordo com a OMS (2016), uma ces&aacute;rea deveria ser realizada, idealmente, apenas quando ela for necess&aacute;ria, do ponto de vista cl&iacute;nico. Por ser um procedimento cir&uacute;rgico invasivo, a ces&aacute;rea acarreta riscos imediatos e a longo prazo para a m&atilde;e, como hemorragia e infec&ccedil;&atilde;o. Estudos apontam ainda a possibilidade de consequ&ecirc;ncias indesej&aacute;veis para os beb&ecirc;s, muitas das quais associadas ao risco de retirada do beb&ecirc; do &uacute;tero ainda com matura&ccedil;&atilde;o incompleta (Villar et al., 2007; Souza et al., 2010; Leal et al., 2017). Ao n&iacute;vel populacional, taxas de ces&aacute;rea maiores que 10% n&atilde;o est&atilde;o associadas com redu&ccedil;&atilde;o de mortalidade materna e neonatal (OMS, 2016).</li>\r\n</ul>",
+        "data_especial": [],
+        "dicas_gestor": "",
+        "fonte": "<ul>\r\n<li>Sistema de Informa&ccedil;&otilde;es sobre Nascidos Vivos (Sinasc).</li>\r\n</ul>",
+        "formula_ficha": "<p>Total de partos vaginais &divide; Total de partos (vaginal+ces&aacute;reo) &times; 100</p>",
+        "limitacoes": "<ul>\r\n<li>Alguns fatores podem influenciar os dados deste indicador, como o modelo de assist&ecirc;ncia obst&eacute;trica adotado, condi&ccedil;&otilde;es socioecon&ocirc;micas e da sa&uacute;de da gestante, disponibilidade de recursos especializados (tecnologia e servi&ccedil;os). N&atilde;o &eacute; poss&iacute;vel identificar se o parto ces&aacute;reo realizado possui ou n&atilde;o indica&ccedil;&atilde;o cl&iacute;nica.</li>\r\n</ul>",
+        "referencias": "<ul>\r\n<li><a href=\"http://www.gov.br/ans/pt-br/arquivos/assuntos/gestao-em-saude/parto-adequado/fichas-de-indicadores-painel_parto.pdf\" target=\"_blank\" rel=\"noopener\">BRASIL. Ag&ecirc;ncia Nacional de Sa&uacute;de Suplementar. 2019.</a></li>\r\n<li><a href=\"https://bmjopen.bmj.com/content/7/12/e017789\" target=\"_blank\" rel=\"noopener\">LEAL MDC, et al. Burden of early-term birth on adverse infant outcomes: a population-based cohort study in Brazil BMJ Open 2017.</a></li>\r\n<li><a href=\"http://apps.who.int/iris/bitstream/handle/10665/161442/WHO_RHR_15.02_por.pdf;jses%20sionid=25A086A9351EC00066305392A7848697?sequence=3\" target=\"_blank\" rel=\"noopener\">OMS. Organiza&ccedil;&atilde;o Mundial de Sa&uacute;de. Declara&ccedil;&atilde;o da OMS sobre Taxas de Ces&aacute;reas. 2016.</a></li>\r\n<li><a href=\"https://bmcmedicine.biomedcentral.com/articles/10.1186/1741-7015-8-71\" target=\"_blank\" rel=\"noopener\">SOUZA JP, et al. Caesarean section without medical indications is associated with an increased risk of adverse short-term maternal outcomes: the 2004-2008. WHO Global Survey on Maternal and Perinatal Health. BMC medicine. 8 (71). 2010.</a></li>\r\n<li><a href=\"https://www.bmj.com/content/335/7628/1025\" target=\"_blank\" rel=\"noopener\">VILLAR J, et al. Maternal and neonatal individual risks and benefits associated with caesarean delivery: multicentre prospective study. BMJ. 335(7628). 2007.</a></li>\r\n</ul>",
+        "resumo": "<p>Propor&ccedil;&atilde;o de partos vaginais em rela&ccedil;&atilde;o ao n&uacute;mero total de partos realizados, em determinado espa&ccedil;o geogr&aacute;fico, no per&iacute;odo considerado.</p>",
+        "usos": "<ul>\r\n<li>Analisar varia&ccedil;&otilde;es geogr&aacute;ficas e temporais da propor&ccedil;&atilde;o de partos vaginais, identificando situa&ccedil;&otilde;es de desigualdade e tend&ecirc;ncias que demandem a&ccedil;&otilde;es e estudos espec&iacute;ficos;</li>\r\n<li>Contribuir na an&aacute;lise da qualidade da assist&ecirc;ncia ao parto e das condi&ccedil;&otilde;es de acesso aos servi&ccedil;os de sa&uacute;de, no contexto do modelo assistencial adotado;</li>\r\n<li>Subsidiar processos de planejamento, gest&atilde;o e avalia&ccedil;&atilde;o de pol&iacute;ticas e a&ccedil;&otilde;es de sa&uacute;de voltadas para a aten&ccedil;&atilde;o &agrave; sa&uacute;de da mulher e da crian&ccedil;a.</li>\r\n</ul>"
+    },
+    "filtros": [
+        {
+            "descricao": "Filtro Temporal, ou seja se refere à datas, especificamente aos anos.",
+            "id_filtro": 7,
+            "nome_filtro": "Ano",
+            "options": [
+                {
+                    "id_option": 1994.0,
+                    "nome_option": "1994"
+                },
+                {
+                    "id_option": 1995.0,
+                    "nome_option": "1995"
+                },
+                {
+                    "id_option": 1996.0,
+                    "nome_option": "1996"
+                },
+                {
+                    "id_option": 1997.0,
+                    "nome_option": "1997"
+                },
+                {
+                    "id_option": 1998.0,
+                    "nome_option": "1998"
+                },
+                {
+                    "id_option": 1999.0,
+                    "nome_option": "1999"
+                },
+                {
+                    "id_option": 2000.0,
+                    "nome_option": "2000"
+                },
+                {
+                    "id_option": 2001.0,
+                    "nome_option": "2001"
+                },
+                {
+                    "id_option": 2002.0,
+                    "nome_option": "2002"
+                },
+                {
+                    "id_option": 2003.0,
+                    "nome_option": "2003"
+                },
+                {
+                    "id_option": 2004.0,
+                    "nome_option": "2004"
+                },
+                {
+                    "id_option": 2005.0,
+                    "nome_option": "2005"
+                },
+                {
+                    "id_option": 2006.0,
+                    "nome_option": "2006"
+                },
+                {
+                    "id_option": 2007.0,
+                    "nome_option": "2007"
+                },
+                {
+                    "id_option": 2008.0,
+                    "nome_option": "2008"
+                },
+                {
+                    "id_option": 2009.0,
+                    "nome_option": "2009"
+                },
+                {
+                    "id_option": 2010.0,
+                    "nome_option": "2010"
+                },
+                {
+                    "id_option": 2011.0,
+                    "nome_option": "2011"
+                },
+                {
+                    "id_option": 2012.0,
+                    "nome_option": "2012"
+                },
+                {
+                    "id_option": 2013.0,
+                    "nome_option": "2013"
+                },
+                {
+                    "id_option": 2014.0,
+                    "nome_option": "2014"
+                },
+                {
+                    "id_option": 2015.0,
+                    "nome_option": "2015"
+                },
+                {
+                    "id_option": 2016.0,
+                    "nome_option": "2016"
+                },
+                {
+                    "id_option": 2017.0,
+                    "nome_option": "2017"
+                },
+                {
+                    "id_option": 2018.0,
+                    "nome_option": "2018"
+                },
+                {
+                    "id_option": 2019.0,
+                    "nome_option": "2019"
+                },
+                {
+                    "id_option": 2020.0,
+                    "nome_option": "2020"
+                },
+                {
+                    "id_option": 2021.0,
+                    "nome_option": "2021"
+                },
+                {
+                    "id_option": 2022.0,
+                    "nome_option": "2022"
+                },
+                {
+                    "id_option": 2023.0,
+                    "nome_option": "2023"
+                },
+                {
+                    "id_option": 2024.0,
+                    "nome_option": "2024"
+                },
+                {
+                    "id_option": 2025.0,
+                    "nome_option": "2025"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente aos municípios do estado de Goiás.",
+            "id_filtro": 1,
+            "nome_filtro": "Município",
+            "options": [
+                {
+                    "id_option": 520005,
+                    "nome_option": "Abadia de Goiás"
+                },
+                {
+                    "id_option": 520010,
+                    "nome_option": "Abadiânia"
+                },
+                {
+                    "id_option": 520013,
+                    "nome_option": "Acreúna"
+                },
+                {
+                    "id_option": 520015,
+                    "nome_option": "Adelândia"
+                },
+                {
+                    "id_option": 520017,
+                    "nome_option": "Água Fria de Goiás"
+                },
+                {
+                    "id_option": 520020,
+                    "nome_option": "Água Limpa"
+                },
+                {
+                    "id_option": 520025,
+                    "nome_option": "Águas Lindas de Goiás"
+                },
+                {
+                    "id_option": 520030,
+                    "nome_option": "Alexânia"
+                },
+                {
+                    "id_option": 520050,
+                    "nome_option": "Aloândia"
+                },
+                {
+                    "id_option": 520055,
+                    "nome_option": "Alto Horizonte"
+                },
+                {
+                    "id_option": 520060,
+                    "nome_option": "Alto Paraíso de Goiás"
+                },
+                {
+                    "id_option": 520080,
+                    "nome_option": "Alvorada do Norte"
+                },
+                {
+                    "id_option": 520082,
+                    "nome_option": "Amaralina"
+                },
+                {
+                    "id_option": 520085,
+                    "nome_option": "Americano do Brasil"
+                },
+                {
+                    "id_option": 520090,
+                    "nome_option": "Amorinópolis"
+                },
+                {
+                    "id_option": 520110,
+                    "nome_option": "Anápolis"
+                },
+                {
+                    "id_option": 520120,
+                    "nome_option": "Anhanguera"
+                },
+                {
+                    "id_option": 520130,
+                    "nome_option": "Anicuns"
+                },
+                {
+                    "id_option": 520140,
+                    "nome_option": "Aparecida de Goiânia"
+                },
+                {
+                    "id_option": 520145,
+                    "nome_option": "Aparecida do Rio Doce"
+                },
+                {
+                    "id_option": 520150,
+                    "nome_option": "Aporé"
+                },
+                {
+                    "id_option": 520160,
+                    "nome_option": "Araçu"
+                },
+                {
+                    "id_option": 520170,
+                    "nome_option": "Aragarças"
+                },
+                {
+                    "id_option": 520180,
+                    "nome_option": "Aragoiânia"
+                },
+                {
+                    "id_option": 520215,
+                    "nome_option": "Araguapaz"
+                },
+                {
+                    "id_option": 520235,
+                    "nome_option": "Arenópolis"
+                },
+                {
+                    "id_option": 520250,
+                    "nome_option": "Aruanã"
+                },
+                {
+                    "id_option": 520260,
+                    "nome_option": "Aurilândia"
+                },
+                {
+                    "id_option": 520280,
+                    "nome_option": "Avelinópolis"
+                },
+                {
+                    "id_option": 520310,
+                    "nome_option": "Baliza"
+                },
+                {
+                    "id_option": 520320,
+                    "nome_option": "Barro Alto"
+                },
+                {
+                    "id_option": 520330,
+                    "nome_option": "Bela Vista de Goiás"
+                },
+                {
+                    "id_option": 520340,
+                    "nome_option": "Bom Jardim de Goiás"
+                },
+                {
+                    "id_option": 520350,
+                    "nome_option": "Bom Jesus de Goiás"
+                },
+                {
+                    "id_option": 520355,
+                    "nome_option": "Bonfinópolis"
+                },
+                {
+                    "id_option": 520357,
+                    "nome_option": "Bonópolis"
+                },
+                {
+                    "id_option": 520360,
+                    "nome_option": "Brazabrantes"
+                },
+                {
+                    "id_option": 520380,
+                    "nome_option": "Britânia"
+                },
+                {
+                    "id_option": 520390,
+                    "nome_option": "Buriti Alegre"
+                },
+                {
+                    "id_option": 520393,
+                    "nome_option": "Buriti de Goiás"
+                },
+                {
+                    "id_option": 520396,
+                    "nome_option": "Buritinópolis"
+                },
+                {
+                    "id_option": 520400,
+                    "nome_option": "Cabeceiras"
+                },
+                {
+                    "id_option": 520410,
+                    "nome_option": "Cachoeira Alta"
+                },
+                {
+                    "id_option": 520420,
+                    "nome_option": "Cachoeira de Goiás"
+                },
+                {
+                    "id_option": 520425,
+                    "nome_option": "Cachoeira Dourada"
+                },
+                {
+                    "id_option": 520430,
+                    "nome_option": "Caçu"
+                },
+                {
+                    "id_option": 520440,
+                    "nome_option": "Caiapônia"
+                },
+                {
+                    "id_option": 520450,
+                    "nome_option": "Caldas Novas"
+                },
+                {
+                    "id_option": 520455,
+                    "nome_option": "Caldazinha"
+                },
+                {
+                    "id_option": 520460,
+                    "nome_option": "Campestre de Goiás"
+                },
+                {
+                    "id_option": 520465,
+                    "nome_option": "Campinaçu"
+                },
+                {
+                    "id_option": 520470,
+                    "nome_option": "Campinorte"
+                },
+                {
+                    "id_option": 520480,
+                    "nome_option": "Campo Alegre de Goiás"
+                },
+                {
+                    "id_option": 520485,
+                    "nome_option": "Campo Limpo de Goiás"
+                },
+                {
+                    "id_option": 520490,
+                    "nome_option": "Campos Belos"
+                },
+                {
+                    "id_option": 520495,
+                    "nome_option": "Campos Verdes"
+                },
+                {
+                    "id_option": 520500,
+                    "nome_option": "Carmo do Rio Verde"
+                },
+                {
+                    "id_option": 520505,
+                    "nome_option": "Castelândia"
+                },
+                {
+                    "id_option": 520510,
+                    "nome_option": "Catalão"
+                },
+                {
+                    "id_option": 520520,
+                    "nome_option": "Caturaí"
+                },
+                {
+                    "id_option": 520530,
+                    "nome_option": "Cavalcante"
+                },
+                {
+                    "id_option": 520540,
+                    "nome_option": "Ceres"
+                },
+                {
+                    "id_option": 520545,
+                    "nome_option": "Cezarina"
+                },
+                {
+                    "id_option": 520547,
+                    "nome_option": "Chapadão do Céu"
+                },
+                {
+                    "id_option": 520549,
+                    "nome_option": "Cidade Ocidental"
+                },
+                {
+                    "id_option": 520551,
+                    "nome_option": "Cocalzinho de Goiás"
+                },
+                {
+                    "id_option": 520552,
+                    "nome_option": "Colinas do Sul"
+                },
+                {
+                    "id_option": 520570,
+                    "nome_option": "Córrego do Ouro"
+                },
+                {
+                    "id_option": 520580,
+                    "nome_option": "Corumbá de Goiás"
+                },
+                {
+                    "id_option": 520590,
+                    "nome_option": "Corumbaíba"
+                },
+                {
+                    "id_option": 520620,
+                    "nome_option": "Cristalina"
+                },
+                {
+                    "id_option": 520630,
+                    "nome_option": "Cristianópolis"
+                },
+                {
+                    "id_option": 520640,
+                    "nome_option": "Crixás"
+                },
+                {
+                    "id_option": 520650,
+                    "nome_option": "Cromínia"
+                },
+                {
+                    "id_option": 520660,
+                    "nome_option": "Cumari"
+                },
+                {
+                    "id_option": 520670,
+                    "nome_option": "Damianópolis"
+                },
+                {
+                    "id_option": 520680,
+                    "nome_option": "Damolândia"
+                },
+                {
+                    "id_option": 520690,
+                    "nome_option": "Davinópolis"
+                },
+                {
+                    "id_option": 520710,
+                    "nome_option": "Diorama"
+                },
+                {
+                    "id_option": 520830,
+                    "nome_option": "Divinópolis de Goiás"
+                },
+                {
+                    "id_option": 520725,
+                    "nome_option": "Doverlândia"
+                },
+                {
+                    "id_option": 520735,
+                    "nome_option": "Edealina"
+                },
+                {
+                    "id_option": 520740,
+                    "nome_option": "Edéia"
+                },
+                {
+                    "id_option": 520750,
+                    "nome_option": "Estrela do Norte"
+                },
+                {
+                    "id_option": 520753,
+                    "nome_option": "Faina"
+                },
+                {
+                    "id_option": 520760,
+                    "nome_option": "Fazenda Nova"
+                },
+                {
+                    "id_option": 520780,
+                    "nome_option": "Firminópolis"
+                },
+                {
+                    "id_option": 520790,
+                    "nome_option": "Flores de Goiás"
+                },
+                {
+                    "id_option": 520800,
+                    "nome_option": "Formosa"
+                },
+                {
+                    "id_option": 520810,
+                    "nome_option": "Formoso"
+                },
+                {
+                    "id_option": 520815,
+                    "nome_option": "Gameleira de Goiás"
+                },
+                {
+                    "id_option": 520840,
+                    "nome_option": "Goianápolis"
+                },
+                {
+                    "id_option": 520850,
+                    "nome_option": "Goiandira"
+                },
+                {
+                    "id_option": 520860,
+                    "nome_option": "Goianésia"
+                },
+                {
+                    "id_option": 520870,
+                    "nome_option": "Goiânia"
+                },
+                {
+                    "id_option": 520880,
+                    "nome_option": "Goianira"
+                },
+                {
+                    "id_option": 520890,
+                    "nome_option": "Goiás"
+                },
+                {
+                    "id_option": 520910,
+                    "nome_option": "Goiatuba"
+                },
+                {
+                    "id_option": 520915,
+                    "nome_option": "Gouvelândia"
+                },
+                {
+                    "id_option": 520920,
+                    "nome_option": "Guapó"
+                },
+                {
+                    "id_option": 520929,
+                    "nome_option": "Guaraíta"
+                },
+                {
+                    "id_option": 520940,
+                    "nome_option": "Guarani de Goiás"
+                },
+                {
+                    "id_option": 520945,
+                    "nome_option": "Guarinos"
+                },
+                {
+                    "id_option": 520960,
+                    "nome_option": "Heitoraí"
+                },
+                {
+                    "id_option": 520970,
+                    "nome_option": "Hidrolândia"
+                },
+                {
+                    "id_option": 520980,
+                    "nome_option": "Hidrolina"
+                },
+                {
+                    "id_option": 520990,
+                    "nome_option": "Iaciara"
+                },
+                {
+                    "id_option": 520993,
+                    "nome_option": "Inaciolândia"
+                },
+                {
+                    "id_option": 520995,
+                    "nome_option": "Indiara"
+                },
+                {
+                    "id_option": 521000,
+                    "nome_option": "Inhumas"
+                },
+                {
+                    "id_option": 521010,
+                    "nome_option": "Ipameri"
+                },
+                {
+                    "id_option": 521015,
+                    "nome_option": "Ipiranga de Goiás"
+                },
+                {
+                    "id_option": 521020,
+                    "nome_option": "Iporá"
+                },
+                {
+                    "id_option": 521030,
+                    "nome_option": "Israelândia"
+                },
+                {
+                    "id_option": 521040,
+                    "nome_option": "Itaberaí"
+                },
+                {
+                    "id_option": 521056,
+                    "nome_option": "Itaguari"
+                },
+                {
+                    "id_option": 521060,
+                    "nome_option": "Itaguaru"
+                },
+                {
+                    "id_option": 521080,
+                    "nome_option": "Itajá"
+                },
+                {
+                    "id_option": 521090,
+                    "nome_option": "Itapaci"
+                },
+                {
+                    "id_option": 521100,
+                    "nome_option": "Itapirapuã"
+                },
+                {
+                    "id_option": 521120,
+                    "nome_option": "Itapuranga"
+                },
+                {
+                    "id_option": 521130,
+                    "nome_option": "Itarumã"
+                },
+                {
+                    "id_option": 521140,
+                    "nome_option": "Itauçu"
+                },
+                {
+                    "id_option": 521150,
+                    "nome_option": "Itumbiara"
+                },
+                {
+                    "id_option": 521160,
+                    "nome_option": "Ivolândia"
+                },
+                {
+                    "id_option": 521170,
+                    "nome_option": "Jandaia"
+                },
+                {
+                    "id_option": 521180,
+                    "nome_option": "Jaraguá"
+                },
+                {
+                    "id_option": 521190,
+                    "nome_option": "Jataí"
+                },
+                {
+                    "id_option": 521200,
+                    "nome_option": "Jaupaci"
+                },
+                {
+                    "id_option": 521205,
+                    "nome_option": "Jesúpolis"
+                },
+                {
+                    "id_option": 521210,
+                    "nome_option": "Joviânia"
+                },
+                {
+                    "id_option": 521220,
+                    "nome_option": "Jussara"
+                },
+                {
+                    "id_option": 521225,
+                    "nome_option": "Lagoa Santa"
+                },
+                {
+                    "id_option": 521230,
+                    "nome_option": "Leopoldo de Bulhões"
+                },
+                {
+                    "id_option": 521250,
+                    "nome_option": "Luziânia"
+                },
+                {
+                    "id_option": 521260,
+                    "nome_option": "Mairipotaba"
+                },
+                {
+                    "id_option": 521270,
+                    "nome_option": "Mambaí"
+                },
+                {
+                    "id_option": 521280,
+                    "nome_option": "Mara Rosa"
+                },
+                {
+                    "id_option": 521290,
+                    "nome_option": "Marzagão"
+                },
+                {
+                    "id_option": 521295,
+                    "nome_option": "Matrinchã"
+                },
+                {
+                    "id_option": 521300,
+                    "nome_option": "Maurilândia"
+                },
+                {
+                    "id_option": 521305,
+                    "nome_option": "Mimoso de Goiás"
+                },
+                {
+                    "id_option": 521308,
+                    "nome_option": "Minaçu"
+                },
+                {
+                    "id_option": 521310,
+                    "nome_option": "Mineiros"
+                },
+                {
+                    "id_option": 521340,
+                    "nome_option": "Moiporá"
+                },
+                {
+                    "id_option": 521350,
+                    "nome_option": "Monte Alegre de Goiás"
+                },
+                {
+                    "id_option": 521370,
+                    "nome_option": "Montes Claros de Goiás"
+                },
+                {
+                    "id_option": 521375,
+                    "nome_option": "Montividiu"
+                },
+                {
+                    "id_option": 521377,
+                    "nome_option": "Montividiu do Norte"
+                },
+                {
+                    "id_option": 521380,
+                    "nome_option": "Morrinhos"
+                },
+                {
+                    "id_option": 521385,
+                    "nome_option": "Morro Agudo de Goiás"
+                },
+                {
+                    "id_option": 521390,
+                    "nome_option": "Mossâmedes"
+                },
+                {
+                    "id_option": 521400,
+                    "nome_option": "Mozarlândia"
+                },
+                {
+                    "id_option": 521405,
+                    "nome_option": "Mundo Novo"
+                },
+                {
+                    "id_option": 521410,
+                    "nome_option": "Mutunópolis"
+                },
+                {
+                    "id_option": 521440,
+                    "nome_option": "Nazário"
+                },
+                {
+                    "id_option": 521450,
+                    "nome_option": "Nerópolis"
+                },
+                {
+                    "id_option": 521460,
+                    "nome_option": "Niquelândia"
+                },
+                {
+                    "id_option": 521470,
+                    "nome_option": "Nova América"
+                },
+                {
+                    "id_option": 521480,
+                    "nome_option": "Nova Aurora"
+                },
+                {
+                    "id_option": 521483,
+                    "nome_option": "Nova Crixás"
+                },
+                {
+                    "id_option": 521486,
+                    "nome_option": "Nova Glória"
+                },
+                {
+                    "id_option": 521487,
+                    "nome_option": "Nova Iguaçu de Goiás"
+                },
+                {
+                    "id_option": 521490,
+                    "nome_option": "Nova Roma"
+                },
+                {
+                    "id_option": 521500,
+                    "nome_option": "Nova Veneza"
+                },
+                {
+                    "id_option": 521520,
+                    "nome_option": "Novo Brasil"
+                },
+                {
+                    "id_option": 521523,
+                    "nome_option": "Novo Gama"
+                },
+                {
+                    "id_option": 521525,
+                    "nome_option": "Novo Planalto"
+                },
+                {
+                    "id_option": 521530,
+                    "nome_option": "Orizona"
+                },
+                {
+                    "id_option": 521540,
+                    "nome_option": "Ouro Verde de Goiás"
+                },
+                {
+                    "id_option": 521550,
+                    "nome_option": "Ouvidor"
+                },
+                {
+                    "id_option": 521560,
+                    "nome_option": "Padre Bernardo"
+                },
+                {
+                    "id_option": 521565,
+                    "nome_option": "Palestina de Goiás"
+                },
+                {
+                    "id_option": 521570,
+                    "nome_option": "Palmeiras de Goiás"
+                },
+                {
+                    "id_option": 521580,
+                    "nome_option": "Palmelo"
+                },
+                {
+                    "id_option": 521590,
+                    "nome_option": "Palminópolis"
+                },
+                {
+                    "id_option": 521600,
+                    "nome_option": "Panamá"
+                },
+                {
+                    "id_option": 521630,
+                    "nome_option": "Paranaiguara"
+                },
+                {
+                    "id_option": 521640,
+                    "nome_option": "Paraúna"
+                },
+                {
+                    "id_option": 521645,
+                    "nome_option": "Perolândia"
+                },
+                {
+                    "id_option": 521680,
+                    "nome_option": "Petrolina de Goiás"
+                },
+                {
+                    "id_option": 521690,
+                    "nome_option": "Pilar de Goiás"
+                },
+                {
+                    "id_option": 521710,
+                    "nome_option": "Piracanjuba"
+                },
+                {
+                    "id_option": 521720,
+                    "nome_option": "Piranhas"
+                },
+                {
+                    "id_option": 521730,
+                    "nome_option": "Pirenópolis"
+                },
+                {
+                    "id_option": 521740,
+                    "nome_option": "Pires do Rio"
+                },
+                {
+                    "id_option": 521760,
+                    "nome_option": "Planaltina"
+                },
+                {
+                    "id_option": 521770,
+                    "nome_option": "Pontalina"
+                },
+                {
+                    "id_option": 521800,
+                    "nome_option": "Porangatu"
+                },
+                {
+                    "id_option": 521805,
+                    "nome_option": "Porteirão"
+                },
+                {
+                    "id_option": 521810,
+                    "nome_option": "Portelândia"
+                },
+                {
+                    "id_option": 521830,
+                    "nome_option": "Posse"
+                },
+                {
+                    "id_option": 521839,
+                    "nome_option": "Professor Jamil"
+                },
+                {
+                    "id_option": 521850,
+                    "nome_option": "Quirinópolis"
+                },
+                {
+                    "id_option": 521860,
+                    "nome_option": "Rialma"
+                },
+                {
+                    "id_option": 521870,
+                    "nome_option": "Rianápolis"
+                },
+                {
+                    "id_option": 521878,
+                    "nome_option": "Rio Quente"
+                },
+                {
+                    "id_option": 521880,
+                    "nome_option": "Rio Verde"
+                },
+                {
+                    "id_option": 521890,
+                    "nome_option": "Rubiataba"
+                },
+                {
+                    "id_option": 521900,
+                    "nome_option": "Sanclerlândia"
+                },
+                {
+                    "id_option": 521910,
+                    "nome_option": "Santa Bárbara de Goiás"
+                },
+                {
+                    "id_option": 521920,
+                    "nome_option": "Santa Cruz de Goiás"
+                },
+                {
+                    "id_option": 521925,
+                    "nome_option": "Santa Fé de Goiás"
+                },
+                {
+                    "id_option": 521930,
+                    "nome_option": "Santa Helena de Goiás"
+                },
+                {
+                    "id_option": 521935,
+                    "nome_option": "Santa Isabel"
+                },
+                {
+                    "id_option": 521940,
+                    "nome_option": "Santa Rita do Araguaia"
+                },
+                {
+                    "id_option": 521945,
+                    "nome_option": "Santa Rita do Novo Destino"
+                },
+                {
+                    "id_option": 521950,
+                    "nome_option": "Santa Rosa de Goiás"
+                },
+                {
+                    "id_option": 521960,
+                    "nome_option": "Santa Tereza de Goiás"
+                },
+                {
+                    "id_option": 521970,
+                    "nome_option": "Santa Terezinha de Goiás"
+                },
+                {
+                    "id_option": 521971,
+                    "nome_option": "Santo Antônio da Barra"
+                },
+                {
+                    "id_option": 521973,
+                    "nome_option": "Santo Antônio de Goiás"
+                },
+                {
+                    "id_option": 521975,
+                    "nome_option": "Santo Antônio do Descoberto"
+                },
+                {
+                    "id_option": 521980,
+                    "nome_option": "São Domingos"
+                },
+                {
+                    "id_option": 521990,
+                    "nome_option": "São Francisco de Goiás"
+                },
+                {
+                    "id_option": 522000,
+                    "nome_option": "São João d'Aliança"
+                },
+                {
+                    "id_option": 522005,
+                    "nome_option": "São João da Paraúna"
+                },
+                {
+                    "id_option": 522010,
+                    "nome_option": "São Luís de Montes Belos"
+                },
+                {
+                    "id_option": 522015,
+                    "nome_option": "São Luíz do Norte"
+                },
+                {
+                    "id_option": 522020,
+                    "nome_option": "São Miguel do Araguaia"
+                },
+                {
+                    "id_option": 522026,
+                    "nome_option": "São Miguel do Passa Quatro"
+                },
+                {
+                    "id_option": 522028,
+                    "nome_option": "São Patrício"
+                },
+                {
+                    "id_option": 522040,
+                    "nome_option": "São Simão"
+                },
+                {
+                    "id_option": 522045,
+                    "nome_option": "Senador Canedo"
+                },
+                {
+                    "id_option": 522050,
+                    "nome_option": "Serranópolis"
+                },
+                {
+                    "id_option": 522060,
+                    "nome_option": "Silvânia"
+                },
+                {
+                    "id_option": 522068,
+                    "nome_option": "Simolândia"
+                },
+                {
+                    "id_option": 522070,
+                    "nome_option": "Sítio d'Abadia"
+                },
+                {
+                    "id_option": 522100,
+                    "nome_option": "Taquaral de Goiás"
+                },
+                {
+                    "id_option": 522108,
+                    "nome_option": "Teresina de Goiás"
+                },
+                {
+                    "id_option": 522119,
+                    "nome_option": "Terezópolis de Goiás"
+                },
+                {
+                    "id_option": 522130,
+                    "nome_option": "Três Ranchos"
+                },
+                {
+                    "id_option": 522140,
+                    "nome_option": "Trindade"
+                },
+                {
+                    "id_option": 522145,
+                    "nome_option": "Trombas"
+                },
+                {
+                    "id_option": 522150,
+                    "nome_option": "Turvânia"
+                },
+                {
+                    "id_option": 522155,
+                    "nome_option": "Turvelândia"
+                },
+                {
+                    "id_option": 522157,
+                    "nome_option": "Uirapuru"
+                },
+                {
+                    "id_option": 522160,
+                    "nome_option": "Uruaçu"
+                },
+                {
+                    "id_option": 522170,
+                    "nome_option": "Uruana"
+                },
+                {
+                    "id_option": 522180,
+                    "nome_option": "Urutaí"
+                },
+                {
+                    "id_option": 522185,
+                    "nome_option": "Valparaíso de Goiás"
+                },
+                {
+                    "id_option": 522190,
+                    "nome_option": "Varjão"
+                },
+                {
+                    "id_option": 522200,
+                    "nome_option": "Vianópolis"
+                },
+                {
+                    "id_option": 522205,
+                    "nome_option": "Vicentinópolis"
+                },
+                {
+                    "id_option": 522220,
+                    "nome_option": "Vila Boa"
+                },
+                {
+                    "id_option": 522230,
+                    "nome_option": "Vila Propício"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente às Regiões de Saúde do estado de Goiás.",
+            "id_filtro": 2,
+            "nome_filtro": "Região de Saúde",
+            "options": [
+                {
+                    "id_option": 1,
+                    "nome_option": "Central"
+                },
+                {
+                    "id_option": 3,
+                    "nome_option": "Centro Sul"
+                },
+                {
+                    "id_option": 7,
+                    "nome_option": "Entorno Norte"
+                },
+                {
+                    "id_option": 6,
+                    "nome_option": "Entorno Sul"
+                },
+                {
+                    "id_option": 12,
+                    "nome_option": "Estrada de Ferro"
+                },
+                {
+                    "id_option": 9,
+                    "nome_option": "Nordeste I"
+                },
+                {
+                    "id_option": 10,
+                    "nome_option": "Nordeste II"
+                },
+                {
+                    "id_option": 15,
+                    "nome_option": "Norte"
+                },
+                {
+                    "id_option": 18,
+                    "nome_option": "Oeste I"
+                },
+                {
+                    "id_option": 16,
+                    "nome_option": "Oeste II"
+                },
+                {
+                    "id_option": 5,
+                    "nome_option": "Pireneus"
+                },
+                {
+                    "id_option": 11,
+                    "nome_option": "Rio Vermelho"
+                },
+                {
+                    "id_option": 14,
+                    "nome_option": "São Patrício I"
+                },
+                {
+                    "id_option": 13,
+                    "nome_option": "São Patrício II"
+                },
+                {
+                    "id_option": 4,
+                    "nome_option": "Serra da Mesa"
+                },
+                {
+                    "id_option": 2,
+                    "nome_option": "Sudoeste I"
+                },
+                {
+                    "id_option": 8,
+                    "nome_option": "Sudoeste II"
+                },
+                {
+                    "id_option": 17,
+                    "nome_option": "Sul"
+                }
+            ]
+        },
+        {
+            "descricao": "Filtro de Localidade, ou seja se refere à entidades geográficas, especificamente às Macrorregiões do estado de Goiás.",
+            "id_filtro": 3,
+            "nome_filtro": "Macrorregião",
+            "options": [
+                {
+                    "id_option": 1,
+                    "nome_option": "Centro Norte"
+                },
+                {
+                    "id_option": 4,
+                    "nome_option": "Centro Oeste"
+                },
+                {
+                    "id_option": 5,
+                    "nome_option": "Centro Sudeste"
+                },
+                {
+                    "id_option": 3,
+                    "nome_option": "Nordeste"
+                },
+                {
+                    "id_option": 2,
+                    "nome_option": "Sudoeste"
+                }
+            ]
+        }
+    ],
+    "id": 7038,
+    "nome": "Proporção de Partos Vaginais - Por Municipio",
+    "option_echarts": "{\n            \"tooltip\": {\n                \"trigger\": \"item\",\n                \"showDelay\": 0,\n                \"transitionDuration\": 0.2,\n                \"valueFormatter\": function (value) {\n                    if (value) {return value.toLocaleString(\"pt-BR\");}\n                    else {return \"-\"}\n                }                \n            },\n            \"visualMap\": {\n                \"left\": \"right\",\n                \"min\": -999,\n                \"max\": 999,\n                \"inRange\": {\n                    \"color\": ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']\n                },\n                \"text\": [\"Alta\", \"Baixa\"],\n                \"calculable\": True,\n                formatter: function (value) {\n                    return value.toLocaleString(\"pt-BR\");\n                }\n            },\n            \"series\": [{\n                \"name\": \"\",\n                \"id\": \"1\",\n                \"type\": \"map\",\n                \"map\": \"GO_mun\",\n                \"emphasis\": {\n                    \"label\": {\"show\": True}\n                },\n                \"projection\": {\n                    \"project\": function (point) {\n                        return projection(point);\n                    },\n                    \"unproject\": function (point) {\n                        return projection.invert(point);\n                    }\n                },\n                \"data\": []\n            }]\n        }",
+    "sufixo": " - Por Municipio",
+    "tipo_viz": null,
+    "update_date": "2025-11-10T16:40:04",
+    "viz": "Mapa de Goiás "
+}

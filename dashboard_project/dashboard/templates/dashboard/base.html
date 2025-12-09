@@ -5,21 +5,22 @@
     <meta charset="UTF-8">
     <title>Dashboard Moderno</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-
-
-    <!-- Bootstrap CSS -->
+    <!-- CSS Choices.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <!-- JS Choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <!-- Style Base CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+     <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
-
     <!-- Bootstrap Icons -->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     >
-    <!-- Style Base CSS -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
 </head>
 <body>
@@ -56,11 +57,44 @@
     </ul>
 </div>
 
+
+
 <div id="content">
     {% block content %}
     <!-- Conteúdo da página será injetado aqui -->
     {% endblock %}
 </div>
+
+<!-- Modal de informações -->
+<div class="modal fade" id="modalInfo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Informações</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="modalInfoBody"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de filtros -->
+<div class="modal fade" id="modalFilters" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Filtros</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="modalFiltersBody"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="applyFilters">Aplicar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- Scripts -->
 
@@ -89,7 +123,7 @@
 <!-- ECharts -->
 
 <!-- JS global do dashboard -->
-<script src="{% static 'js/dashboard.js' %}"></script>
+<script type="module" src="{% static 'js/dashboard.js' %}"></script>
 
 
 </body>

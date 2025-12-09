@@ -1,0 +1,26 @@
+{
+    "data_criacao": "2025-11-22 03:06:30",
+    "applyed_filters": [
+        {
+            "id_filtro": 7,
+            "id_option": [
+                2025.0
+            ]
+        }
+    ],
+    "option_echarts": {
+        "xAxis": {
+            "data": [
+                2025.0
+            ]
+        },
+        "series": [
+            {
+                "id": "1",
+                "data": [
+                    7.58
+                ]
+            }
+        ]
+    }
+}

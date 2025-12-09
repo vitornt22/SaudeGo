@@ -1,0 +1,1012 @@
+{
+    "data_criacao": "2025-11-22 03:07:57",
+    "applyed_filters": [
+        {
+            "id_filtro": 7,
+            "id_option": [
+                2025.0
+            ]
+        }
+    ],
+    "option_echarts": {
+        "visualMap": {
+            "min": 17.78,
+            "max": 100.0
+        },
+        "series": [
+            {
+                "id": "1",
+                "data": [
+                    {
+                        "name": "Abadia de Goiás",
+                        "value": 64.46
+                    },
+                    {
+                        "name": "Abadiânia",
+                        "value": 60.14
+                    },
+                    {
+                        "name": "Acreúna",
+                        "value": 49.06
+                    },
+                    {
+                        "name": "Adelândia",
+                        "value": 52.94
+                    },
+                    {
+                        "name": "Água Fria de Goiás",
+                        "value": 81.82
+                    },
+                    {
+                        "name": "Água Limpa",
+                        "value": 69.23
+                    },
+                    {
+                        "name": "Águas Lindas de Goiás",
+                        "value": 71.7
+                    },
+                    {
+                        "name": "Alexânia",
+                        "value": 56.13
+                    },
+                    {
+                        "name": "Aloândia",
+                        "value": 75.0
+                    },
+                    {
+                        "name": "Alto Horizonte",
+                        "value": 55.7
+                    },
+                    {
+                        "name": "Alto Paraíso de Goiás",
+                        "value": 75.31
+                    },
+                    {
+                        "name": "Alvorada do Norte",
+                        "value": 51.02
+                    },
+                    {
+                        "name": "Amaralina",
+                        "value": 58.33
+                    },
+                    {
+                        "name": "Americano do Brasil",
+                        "value": 32.0
+                    },
+                    {
+                        "name": "Amorinópolis",
+                        "value": 46.43
+                    },
+                    {
+                        "name": "Anápolis",
+                        "value": 49.16
+                    },
+                    {
+                        "name": "Anhanguera",
+                        "value": 22.22
+                    },
+                    {
+                        "name": "Anicuns",
+                        "value": 34.07
+                    },
+                    {
+                        "name": "Aparecida de Goiânia",
+                        "value": 58.14
+                    },
+                    {
+                        "name": "Aparecida do Rio Doce",
+                        "value": 52.17
+                    },
+                    {
+                        "name": "Aporé",
+                        "value": 37.5
+                    },
+                    {
+                        "name": "Araçu",
+                        "value": 77.42
+                    },
+                    {
+                        "name": "Aragarças",
+                        "value": 52.17
+                    },
+                    {
+                        "name": "Aragoiânia",
+                        "value": 55.24
+                    },
+                    {
+                        "name": "Araguapaz",
+                        "value": 64.44
+                    },
+                    {
+                        "name": "Arenópolis",
+                        "value": 46.43
+                    },
+                    {
+                        "name": "Aruanã",
+                        "value": 43.15
+                    },
+                    {
+                        "name": "Aurilândia",
+                        "value": 72.73
+                    },
+                    {
+                        "name": "Avelinópolis",
+                        "value": 33.33
+                    },
+                    {
+                        "name": "Baliza",
+                        "value": 61.54
+                    },
+                    {
+                        "name": "Barro Alto",
+                        "value": 57.0
+                    },
+                    {
+                        "name": "Bela Vista de Goiás",
+                        "value": 39.63
+                    },
+                    {
+                        "name": "Bom Jardim de Goiás",
+                        "value": 90.11
+                    },
+                    {
+                        "name": "Bom Jesus de Goiás",
+                        "value": 21.31
+                    },
+                    {
+                        "name": "Bonfinópolis",
+                        "value": 49.47
+                    },
+                    {
+                        "name": "Bonópolis",
+                        "value": 48.57
+                    },
+                    {
+                        "name": "Brazabrantes",
+                        "value": 64.29
+                    },
+                    {
+                        "name": "Britânia",
+                        "value": 92.11
+                    },
+                    {
+                        "name": "Buriti Alegre",
+                        "value": 51.96
+                    },
+                    {
+                        "name": "Buriti de Goiás",
+                        "value": 64.0
+                    },
+                    {
+                        "name": "Buritinópolis",
+                        "value": 58.54
+                    },
+                    {
+                        "name": "Cabeceiras",
+                        "value": 72.37
+                    },
+                    {
+                        "name": "Cachoeira Alta",
+                        "value": 67.86
+                    },
+                    {
+                        "name": "Cachoeira de Goiás",
+                        "value": 70.0
+                    },
+                    {
+                        "name": "Cachoeira Dourada",
+                        "value": 17.78
+                    },
+                    {
+                        "name": "Caçu",
+                        "value": 38.89
+                    },
+                    {
+                        "name": "Caiapônia",
+                        "value": 51.08
+                    },
+                    {
+                        "name": "Caldas Novas",
+                        "value": 45.59
+                    },
+                    {
+                        "name": "Caldazinha",
+                        "value": 71.79
+                    },
+                    {
+                        "name": "Campestre de Goiás",
+                        "value": 69.23
+                    },
+                    {
+                        "name": "Campinaçu",
+                        "value": 67.31
+                    },
+                    {
+                        "name": "Campinorte",
+                        "value": 46.15
+                    },
+                    {
+                        "name": "Campo Alegre de Goiás",
+                        "value": 40.35
+                    },
+                    {
+                        "name": "Campo Limpo de Goiás",
+                        "value": 50.89
+                    },
+                    {
+                        "name": "Campos Belos",
+                        "value": 68.62
+                    },
+                    {
+                        "name": "Campos Verdes",
+                        "value": 65.85
+                    },
+                    {
+                        "name": "Carmo do Rio Verde",
+                        "value": 64.56
+                    },
+                    {
+                        "name": "Castelândia",
+                        "value": 63.64
+                    },
+                    {
+                        "name": "Catalão",
+                        "value": 44.38
+                    },
+                    {
+                        "name": "Caturaí",
+                        "value": 57.14
+                    },
+                    {
+                        "name": "Cavalcante",
+                        "value": 79.13
+                    },
+                    {
+                        "name": "Ceres",
+                        "value": 65.15
+                    },
+                    {
+                        "name": "Cezarina",
+                        "value": 57.65
+                    },
+                    {
+                        "name": "Chapadão do Céu",
+                        "value": 59.53
+                    },
+                    {
+                        "name": "Cidade Ocidental",
+                        "value": 67.93
+                    },
+                    {
+                        "name": "Cocalzinho de Goiás",
+                        "value": 56.31
+                    },
+                    {
+                        "name": "Colinas do Sul",
+                        "value": 59.46
+                    },
+                    {
+                        "name": "Córrego do Ouro",
+                        "value": 50.0
+                    },
+                    {
+                        "name": "Corumbá de Goiás",
+                        "value": 40.43
+                    },
+                    {
+                        "name": "Corumbaíba",
+                        "value": 60.56
+                    },
+                    {
+                        "name": "Cristalina",
+                        "value": 54.46
+                    },
+                    {
+                        "name": "Cristianópolis",
+                        "value": 71.43
+                    },
+                    {
+                        "name": "Crixás",
+                        "value": 88.65
+                    },
+                    {
+                        "name": "Cromínia",
+                        "value": 60.0
+                    },
+                    {
+                        "name": "Cumari",
+                        "value": 70.59
+                    },
+                    {
+                        "name": "Damianópolis",
+                        "value": 80.77
+                    },
+                    {
+                        "name": "Damolândia",
+                        "value": 60.87
+                    },
+                    {
+                        "name": "Davinópolis",
+                        "value": 66.67
+                    },
+                    {
+                        "name": "Diorama",
+                        "value": 76.19
+                    },
+                    {
+                        "name": "Divinópolis de Goiás",
+                        "value": 69.39
+                    },
+                    {
+                        "name": "Doverlândia",
+                        "value": 65.52
+                    },
+                    {
+                        "name": "Edealina",
+                        "value": 67.65
+                    },
+                    {
+                        "name": "Edéia",
+                        "value": 39.23
+                    },
+                    {
+                        "name": "Estrela do Norte",
+                        "value": 52.78
+                    },
+                    {
+                        "name": "Faina",
+                        "value": 67.5
+                    },
+                    {
+                        "name": "Fazenda Nova",
+                        "value": 75.0
+                    },
+                    {
+                        "name": "Firminópolis",
+                        "value": 67.06
+                    },
+                    {
+                        "name": "Flores de Goiás",
+                        "value": 76.09
+                    },
+                    {
+                        "name": "Formosa",
+                        "value": 65.81
+                    },
+                    {
+                        "name": "Formoso",
+                        "value": 63.16
+                    },
+                    {
+                        "name": "Gameleira de Goiás",
+                        "value": 62.16
+                    },
+                    {
+                        "name": "Goianápolis",
+                        "value": 51.66
+                    },
+                    {
+                        "name": "Goiandira",
+                        "value": 37.14
+                    },
+                    {
+                        "name": "Goianésia",
+                        "value": 78.9
+                    },
+                    {
+                        "name": "Goiânia",
+                        "value": 60.33
+                    },
+                    {
+                        "name": "Goianira",
+                        "value": 64.42
+                    },
+                    {
+                        "name": "Goiás",
+                        "value": 75.27
+                    },
+                    {
+                        "name": "Goiatuba",
+                        "value": 42.22
+                    },
+                    {
+                        "name": "Gouvelândia",
+                        "value": 50.0
+                    },
+                    {
+                        "name": "Guapó",
+                        "value": 63.3
+                    },
+                    {
+                        "name": "Guaraíta",
+                        "value": 78.57
+                    },
+                    {
+                        "name": "Guarani de Goiás",
+                        "value": 60.98
+                    },
+                    {
+                        "name": "Guarinos",
+                        "value": 76.92
+                    },
+                    {
+                        "name": "Heitoraí",
+                        "value": 67.86
+                    },
+                    {
+                        "name": "Hidrolândia",
+                        "value": 44.75
+                    },
+                    {
+                        "name": "Hidrolina",
+                        "value": 51.35
+                    },
+                    {
+                        "name": "Iaciara",
+                        "value": 77.84
+                    },
+                    {
+                        "name": "Inaciolândia",
+                        "value": 42.22
+                    },
+                    {
+                        "name": "Indiara",
+                        "value": 43.86
+                    },
+                    {
+                        "name": "Inhumas",
+                        "value": 72.55
+                    },
+                    {
+                        "name": "Ipameri",
+                        "value": 41.08
+                    },
+                    {
+                        "name": "Ipiranga de Goiás",
+                        "value": 73.68
+                    },
+                    {
+                        "name": "Iporá",
+                        "value": 63.58
+                    },
+                    {
+                        "name": "Israelândia",
+                        "value": 78.57
+                    },
+                    {
+                        "name": "Itaberaí",
+                        "value": 52.62
+                    },
+                    {
+                        "name": "Itaguari",
+                        "value": 65.33
+                    },
+                    {
+                        "name": "Itaguaru",
+                        "value": 57.69
+                    },
+                    {
+                        "name": "Itajá",
+                        "value": 59.09
+                    },
+                    {
+                        "name": "Itapaci",
+                        "value": 72.96
+                    },
+                    {
+                        "name": "Itapirapuã",
+                        "value": 47.83
+                    },
+                    {
+                        "name": "Itapuranga",
+                        "value": 72.5
+                    },
+                    {
+                        "name": "Itarumã",
+                        "value": 30.0
+                    },
+                    {
+                        "name": "Itauçu",
+                        "value": 57.14
+                    },
+                    {
+                        "name": "Itumbiara",
+                        "value": 29.58
+                    },
+                    {
+                        "name": "Ivolândia",
+                        "value": 62.5
+                    },
+                    {
+                        "name": "Jandaia",
+                        "value": 50.0
+                    },
+                    {
+                        "name": "Jaraguá",
+                        "value": 39.06
+                    },
+                    {
+                        "name": "Jataí",
+                        "value": 51.42
+                    },
+                    {
+                        "name": "Jaupaci",
+                        "value": 75.0
+                    },
+                    {
+                        "name": "Jesúpolis",
+                        "value": 40.91
+                    },
+                    {
+                        "name": "Joviânia",
+                        "value": 65.67
+                    },
+                    {
+                        "name": "Jussara",
+                        "value": 32.77
+                    },
+                    {
+                        "name": "Lagoa Santa",
+                        "value": 36.36
+                    },
+                    {
+                        "name": "Leopoldo de Bulhões",
+                        "value": 51.67
+                    },
+                    {
+                        "name": "Luziânia",
+                        "value": 62.94
+                    },
+                    {
+                        "name": "Mairipotaba",
+                        "value": 50.0
+                    },
+                    {
+                        "name": "Mambaí",
+                        "value": 81.15
+                    },
+                    {
+                        "name": "Mara Rosa",
+                        "value": 69.23
+                    },
+                    {
+                        "name": "Marzagão",
+                        "value": 60.0
+                    },
+                    {
+                        "name": "Matrinchã",
+                        "value": 75.56
+                    },
+                    {
+                        "name": "Maurilândia",
+                        "value": 34.83
+                    },
+                    {
+                        "name": "Mimoso de Goiás",
+                        "value": 75.86
+                    },
+                    {
+                        "name": "Minaçu",
+                        "value": 58.93
+                    },
+                    {
+                        "name": "Mineiros",
+                        "value": 34.66
+                    },
+                    {
+                        "name": "Moiporá",
+                        "value": 70.0
+                    },
+                    {
+                        "name": "Monte Alegre de Goiás",
+                        "value": 79.1
+                    },
+                    {
+                        "name": "Montes Claros de Goiás",
+                        "value": 62.35
+                    },
+                    {
+                        "name": "Montividiu",
+                        "value": 61.33
+                    },
+                    {
+                        "name": "Montividiu do Norte",
+                        "value": 37.5
+                    },
+                    {
+                        "name": "Morrinhos",
+                        "value": 61.34
+                    },
+                    {
+                        "name": "Morro Agudo de Goiás",
+                        "value": 90.91
+                    },
+                    {
+                        "name": "Mossâmedes",
+                        "value": 75.68
+                    },
+                    {
+                        "name": "Mozarlândia",
+                        "value": 62.5
+                    },
+                    {
+                        "name": "Mundo Novo",
+                        "value": 77.61
+                    },
+                    {
+                        "name": "Município ignorado - GO",
+                        "value": 42.11
+                    },
+                    {
+                        "name": "Mutunópolis",
+                        "value": 56.76
+                    },
+                    {
+                        "name": "Nazário",
+                        "value": 51.47
+                    },
+                    {
+                        "name": "Nerópolis",
+                        "value": 46.0
+                    },
+                    {
+                        "name": "Niquelândia",
+                        "value": 72.22
+                    },
+                    {
+                        "name": "Nova América",
+                        "value": 60.0
+                    },
+                    {
+                        "name": "Nova Aurora",
+                        "value": 36.36
+                    },
+                    {
+                        "name": "Nova Crixás",
+                        "value": 74.48
+                    },
+                    {
+                        "name": "Nova Glória",
+                        "value": 67.16
+                    },
+                    {
+                        "name": "Nova Iguaçu de Goiás",
+                        "value": 32.43
+                    },
+                    {
+                        "name": "Nova Roma",
+                        "value": 82.14
+                    },
+                    {
+                        "name": "Nova Veneza",
+                        "value": 63.64
+                    },
+                    {
+                        "name": "Novo Brasil",
+                        "value": 47.62
+                    },
+                    {
+                        "name": "Novo Gama",
+                        "value": 80.32
+                    },
+                    {
+                        "name": "Novo Planalto",
+                        "value": 74.07
+                    },
+                    {
+                        "name": "Orizona",
+                        "value": 42.04
+                    },
+                    {
+                        "name": "Ouro Verde de Goiás",
+                        "value": 40.91
+                    },
+                    {
+                        "name": "Ouvidor",
+                        "value": 44.3
+                    },
+                    {
+                        "name": "Padre Bernardo",
+                        "value": 72.57
+                    },
+                    {
+                        "name": "Palestina de Goiás",
+                        "value": 57.14
+                    },
+                    {
+                        "name": "Palmeiras de Goiás",
+                        "value": 37.5
+                    },
+                    {
+                        "name": "Palmelo",
+                        "value": 61.54
+                    },
+                    {
+                        "name": "Palminópolis",
+                        "value": 23.08
+                    },
+                    {
+                        "name": "Panamá",
+                        "value": 60.0
+                    },
+                    {
+                        "name": "Paranaiguara",
+                        "value": 85.92
+                    },
+                    {
+                        "name": "Paraúna",
+                        "value": 67.41
+                    },
+                    {
+                        "name": "Perolândia",
+                        "value": 37.5
+                    },
+                    {
+                        "name": "Petrolina de Goiás",
+                        "value": 39.13
+                    },
+                    {
+                        "name": "Pilar de Goiás",
+                        "value": 88.89
+                    },
+                    {
+                        "name": "Piracanjuba",
+                        "value": 68.75
+                    },
+                    {
+                        "name": "Piranhas",
+                        "value": 61.46
+                    },
+                    {
+                        "name": "Pirenópolis",
+                        "value": 44.57
+                    },
+                    {
+                        "name": "Pires do Rio",
+                        "value": 45.92
+                    },
+                    {
+                        "name": "Planaltina",
+                        "value": 78.23
+                    },
+                    {
+                        "name": "Pontalina",
+                        "value": 62.5
+                    },
+                    {
+                        "name": "Porangatu",
+                        "value": 81.92
+                    },
+                    {
+                        "name": "Porteirão",
+                        "value": 51.11
+                    },
+                    {
+                        "name": "Portelândia",
+                        "value": 32.14
+                    },
+                    {
+                        "name": "Posse",
+                        "value": 62.62
+                    },
+                    {
+                        "name": "Professor Jamil",
+                        "value": 58.33
+                    },
+                    {
+                        "name": "Quirinópolis",
+                        "value": 43.23
+                    },
+                    {
+                        "name": "Rialma",
+                        "value": 67.88
+                    },
+                    {
+                        "name": "Rianápolis",
+                        "value": 67.44
+                    },
+                    {
+                        "name": "Rio Quente",
+                        "value": 57.58
+                    },
+                    {
+                        "name": "Rio Verde",
+                        "value": 46.82
+                    },
+                    {
+                        "name": "Rubiataba",
+                        "value": 68.93
+                    },
+                    {
+                        "name": "Sanclerlândia",
+                        "value": 72.73
+                    },
+                    {
+                        "name": "Santa Bárbara de Goiás",
+                        "value": 44.68
+                    },
+                    {
+                        "name": "Santa Cruz de Goiás",
+                        "value": 58.82
+                    },
+                    {
+                        "name": "Santa Fé de Goiás",
+                        "value": 76.74
+                    },
+                    {
+                        "name": "Santa Helena de Goiás",
+                        "value": 65.27
+                    },
+                    {
+                        "name": "Santa Isabel",
+                        "value": 72.41
+                    },
+                    {
+                        "name": "Santa Rita do Araguaia",
+                        "value": 40.79
+                    },
+                    {
+                        "name": "Santa Rita do Novo Destino",
+                        "value": 100.0
+                    },
+                    {
+                        "name": "Santa Rosa de Goiás",
+                        "value": 41.38
+                    },
+                    {
+                        "name": "Santa Tereza de Goiás",
+                        "value": 32.0
+                    },
+                    {
+                        "name": "Santa Terezinha de Goiás",
+                        "value": 75.86
+                    },
+                    {
+                        "name": "Santo Antônio da Barra",
+                        "value": 45.0
+                    },
+                    {
+                        "name": "Santo Antônio de Goiás",
+                        "value": 56.16
+                    },
+                    {
+                        "name": "Santo Antônio do Descoberto",
+                        "value": 80.73
+                    },
+                    {
+                        "name": "São Domingos",
+                        "value": 84.62
+                    },
+                    {
+                        "name": "São Francisco de Goiás",
+                        "value": 41.07
+                    },
+                    {
+                        "name": "São João d'Aliança",
+                        "value": 69.5
+                    },
+                    {
+                        "name": "São João da Paraúna",
+                        "value": 66.67
+                    },
+                    {
+                        "name": "São Luís de Montes Belos",
+                        "value": 56.86
+                    },
+                    {
+                        "name": "São Luíz do Norte",
+                        "value": 65.22
+                    },
+                    {
+                        "name": "São Miguel do Araguaia",
+                        "value": 52.87
+                    },
+                    {
+                        "name": "São Miguel do Passa Quatro",
+                        "value": 65.52
+                    },
+                    {
+                        "name": "São Patrício",
+                        "value": 68.42
+                    },
+                    {
+                        "name": "São Simão",
+                        "value": 22.54
+                    },
+                    {
+                        "name": "Senador Canedo",
+                        "value": 56.56
+                    },
+                    {
+                        "name": "Serranópolis",
+                        "value": 58.14
+                    },
+                    {
+                        "name": "Silvânia",
+                        "value": 67.3
+                    },
+                    {
+                        "name": "Simolândia",
+                        "value": 73.33
+                    },
+                    {
+                        "name": "Sítio d'Abadia",
+                        "value": 55.56
+                    },
+                    {
+                        "name": "Taquaral de Goiás",
+                        "value": 62.5
+                    },
+                    {
+                        "name": "Teresina de Goiás",
+                        "value": 71.88
+                    },
+                    {
+                        "name": "Terezópolis de Goiás",
+                        "value": 61.05
+                    },
+                    {
+                        "name": "Três Ranchos",
+                        "value": 33.33
+                    },
+                    {
+                        "name": "Trindade",
+                        "value": 58.69
+                    },
+                    {
+                        "name": "Trombas",
+                        "value": 23.53
+                    },
+                    {
+                        "name": "Turvânia",
+                        "value": 29.03
+                    },
+                    {
+                        "name": "Turvelândia",
+                        "value": 48.08
+                    },
+                    {
+                        "name": "Uirapuru",
+                        "value": 81.82
+                    },
+                    {
+                        "name": "Uruaçu",
+                        "value": 50.89
+                    },
+                    {
+                        "name": "Uruana",
+                        "value": 80.51
+                    },
+                    {
+                        "name": "Urutaí",
+                        "value": 60.0
+                    },
+                    {
+                        "name": "Valparaíso de Goiás",
+                        "value": 69.34
+                    },
+                    {
+                        "name": "Varjão",
+                        "value": 62.5
+                    },
+                    {
+                        "name": "Vianópolis",
+                        "value": 56.91
+                    },
+                    {
+                        "name": "Vicentinópolis",
+                        "value": 45.76
+                    },
+                    {
+                        "name": "Vila Boa",
+                        "value": 81.08
+                    },
+                    {
+                        "name": "Vila Propício",
+                        "value": 74.49
+                    }
+                ]
+            }
+        ]
+    }
+}
