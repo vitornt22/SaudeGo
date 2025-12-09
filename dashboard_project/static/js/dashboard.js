@@ -22,8 +22,6 @@ document.getElementById("loadMoreBtn").addEventListener("click", async () => {
 });
 
 
-
-
 async function initDashboard(offset = 0, append = false) {
 	const container = document.getElementById("chartsContainer");
 
@@ -44,22 +42,15 @@ async function initDashboard(offset = 0, append = false) {
 	}
 
 	// Ativa ou desativa botão de carregar mais
-	const loadMoreBtn = document.getElementById("loadMoreBtn");
-	if (offset + LIMIT < totalIndicators) {
-		loadMoreBtn.disabled = false;
+	const btn = document.getElementById("loadMoreBtn");
+	if (offset + LIMIT >= totalIndicators) {
+		btn.style.display = "none"; // esconde quando não tem mais
 	} else {
-		loadMoreBtn.disabled = true;
+		btn.style.display = "inline-block"; // mostra se ainda tiver
+		btn.disabled = false;
 	}
 }
 
-
-// Searching Indicators
-async function fetchIndicators() {
-	const res = await fetch(`${API_BASE}/indicators`);
-	if (!res.ok) throw new Error("Erro ao buscar indicadores");
-	const json = await res.json();
-	return json.indicators;
-}
 
 // Searching a specific indicator by id
 async function fetchIndicatorData(id) {
