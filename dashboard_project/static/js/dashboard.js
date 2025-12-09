@@ -2,74 +2,88 @@
 import { plotMapChart, plotLineChart } from './plot.js'
 import { openInfoModal, openFilterModal } from './modal.js';
 
+// Configurações Variaveis Globais
 const API_BASE = "http://0.0.0.0:8002";
-
 let currentOffset = 0;
 const LIMIT = 10;
 let totalIndicators = 0;
 
 
-
+// Evento para inicio das funções ao carregar o DOM
 document.addEventListener("DOMContentLoaded", () => {
-	initDashboard(); // primeira página
+	initDashboard();
 	initApplyFiltersButton();
 });
 
-
+// Monitora o clique no botão de carregar mais 
+// ao clicar ele muda a paginação e busca os próximos dados com base no LIMIT definido
 document.getElementById("loadMoreBtn").addEventListener("click", async () => {
 	currentOffset += LIMIT;
 	await initDashboard(currentOffset, true); // append = true
 });
 
 
+// Função para carregar indicadores da API e plotar os charts
 async function initDashboard(offset = 0, append = false) {
+	// Buscando o chartsContainer do dashboard.html
 	const container = document.getElementById("chartsContainer");
 
+	// Se o parametro append for falso significa que os indicadores estão sendo carregados
 	if (!append) container.innerHTML = "<h4>Carregando indicadores...</h4>";
 
-	// Busca indicadores com paginação
+	// Busca indicadores com paginação (definida no backend com FASTAPI)
+	// Estrutura vinda do backend 
+	// {
+	//     "indicators": paginated_indicators,
+	//     "total": total_count,
+	//     "limit": limit,
+	//     "offset": offset,
+	// }
 	const res = await fetch(`${API_BASE}/indicators?limit=${LIMIT}&offset=${offset}`);
 	if (!res.ok) throw new Error("Erro ao buscar indicadores");
+
+	// busca os dados json
 	const json = await res.json();
 	const indicators = json.indicators;
 	totalIndicators = json.total;
 
 	if (!append) container.innerHTML = "";
 
+	// Percorre todos os IDs para fazer a requisição dos dados dos indicadores
 	for (const id of indicators) {
+		// faz a busca do metada.json e data_example dos id do indicador atual
 		const indicatorData = await fetchIndicatorData(id);
+		// chama a função para criar ou atualizar o card que irá plotar o chart
 		createChartCard(indicatorData);
 	}
 
-	// Ativa ou desativa botão de carregar mais
 	const btn = document.getElementById("loadMoreBtn");
 	if (offset + LIMIT >= totalIndicators) {
 		btn.style.display = "none"; // esconde quando não tem mais
 	} else {
-		btn.style.display = "inline-block"; // mostra se ainda tiver
+		btn.style.display = "inline-block"; //mostra se ainda tiver
 		btn.disabled = false;
 	}
 }
 
 
-// Searching a specific indicator by id
+// Busca os metadados.json e data_example de um indicador especifico
 async function fetchIndicatorData(id) {
 	const res = await fetch(`${API_BASE}/indicators/${id}`);
 	if (!res.ok) throw new Error("Erro ao buscar indicador " + id);
 	return await res.json();
 }
 
-// Create card and chart
+// Função para criar ou atualizar o card com os charts
 export function createChartCard(data) {
+	// Busca a div do chart
 	const container = document.getElementById("chartsContainer");
 	const chartId = "chart_" + data.metadata.id;
 
 	// Procura card existente pelo ID do indicador
 	let card = container.querySelector(`[data-indicator-id="${data.metadata.id}"]`);
 
-	// -------------------------------------------------------------
-	// SE O CARD JÁ EXISTE → Atualiza somente o card-body correto
-	// -------------------------------------------------------------
+	// Se o card existir,  atualiza somente o card-body correto
 	if (card) {
 		const cardBody = card.querySelector(`[data-chart-id="${chartId}"]`);
 
@@ -88,15 +102,12 @@ export function createChartCard(data) {
 			<small>${data.metadata.ficha.complemento}</small>
 		`;
 
-		// Reaplica eventos
+		// Reaplica botões para abrir os modais com informações e filtros
 		cardBody.querySelector(".btn-modal-info").addEventListener("click", () => openInfoModal(data.metadata));
-		cardBody.querySelector(".btn-modal-filters").addEventListener("click", () => openFilterModal(data.metadata));
+		cardBody.querySelector(".btn-modal-filters").addEventListener("click", () => openFilterModal(data.metadata, data.data_example));
 
 	} else {
-
-		// -------------------------------------------------------------
-		// CRIA UM NOVO CARD
-		// -------------------------------------------------------------
+		// Se o card não existir, criamos um 
 		card = document.createElement("div");
 		card.className = "card mb-4 shadow-sm";
 		card.style.borderRadius = "12px";
@@ -122,10 +133,9 @@ export function createChartCard(data) {
 		container.appendChild(card);
 
 		const cardBody = card.querySelector(`[data-chart-id="${chartId}"]`);
-
-		// Eventos dos botões
+		// Eventos dos botões para abrir os modais de informações e filtros
 		cardBody.querySelector(".btn-modal-info").addEventListener("click", () => openInfoModal(data.metadata));
-		cardBody.querySelector(".btn-modal-filters").addEventListener("click", () => openFilterModal(data.metadata));
+		cardBody.querySelector(".btn-modal-filters").addEventListener("click", () => openFilterModal(data.metadata, data.data_example));
 	}
 
 	plotChart(chartId, data);
@@ -189,6 +199,8 @@ function detectChartType(data) {
 
 // filterApply.js
 export function initApplyFiltersButton() {
+	// Ativa a chamada da função ao clicar no botão de aplicação de filtros
+	// tudo isso de forma dinamica
 	document.getElementById("applyFilters").addEventListener("click", async () => {
 		const modal = document.getElementById("modalFilters");
 		const indicatorId = modal?.dataset?.indicatorId;

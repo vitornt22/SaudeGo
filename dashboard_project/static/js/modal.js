@@ -1,6 +1,7 @@
 
 // Função para abrir modal de informações
 export function openInfoModal(metadata) {
+	// Abre o modal e organiza as informações do metadata.json
 	const modalBody = document.getElementById("modalInfoBody");
 	modalBody.innerHTML = `
 		<h5><strong>${metadata.nome}</strong></strong></h5>
@@ -17,66 +18,89 @@ export function openInfoModal(metadata) {
 }
 
 // Função para abrir modal de filtros
-export function openFilterModal(metadata) {
+export function openFilterModal(metadata, appliedData) {
 	const modalBody = document.getElementById("modalFiltersBody");
-	modalBody.innerHTML = ""; // Limpar antes
+	modalBody.innerHTML = ""; // Limpar antes de colocar os filtros dinamicamente
 
+	// 1. Mapear os filtros aplicados (id_filtro -> [valor_da_opcao_em_string, ...])
+	// Nessa parte a função percorrer o APPLYED_FILTERS do data_example e adiciona
+	// todas as opções pré selecionadas para seus respectivos id
+	// A lógica é relacionar os ids selecionados com os filtros do metadata.json
+	// e adicionar ao formulário quando for aberto...
+	const appliedOptionsMap = new Map();
+	if (appliedData && appliedData.applyed_filters && appliedData.applyed_filters.length) {
+		appliedData.applyed_filters.forEach(filter => {
+			// CONVERTE para String. Isso transforma 2025.0 em "2025"
+			const optionsToSelect = filter.id_option.map(id => String(id));
+			appliedOptionsMap.set(filter.id_filtro, optionsToSelect);
+		});
+	}
+
+	// Se existem filtros que podem ser aplicados
 	if (metadata.filtros && metadata.filtros.length) {
 		metadata.filtros.forEach(filtro => {
-			// Cria label
+			// Busca as opções aplicadas para o filtro atual( procura na lista de filtros adicionado)
+			// diretamente do applyed_filters
+			const selectedValues = appliedOptionsMap.get(filtro.id_filtro) || [];
+
+			// Criação de Label e Select 
 			const label = document.createElement("label");
 			label.textContent = filtro.nome_filtro;
 			label.className = "form-label";
 
-			// Cria select multi
 			const select = document.createElement("select");
 			select.className = "form-select mb-1";
 			select.name = filtro.nome;
-
-			// AQUI  ALTERAÇÃO:
+			// Essa lógica foi percebida analizando o raw_data.json
 			select.dataset.field = `nome_option_f${filtro.id_filtro}`;
+			select.multiple = true;
 
-			select.multiple = true; // obrigatório para Choices.js
-
-			// Adiciona opções
+			// Percorre os filtros aplicaveis no metadata.json
 			filtro.options.forEach(opt => {
+				// busca os options
 				const option = document.createElement("option");
-				option.value = opt.nome_option;
+				const optionValue = String(opt.nome_option);
+
+				option.value = optionValue;
 				option.textContent = opt.label || opt.nome_option;
 				select.appendChild(option);
 			});
 
-			// Cria small com descrição do filtro
+			// Se houver descrição adiciona
 			if (filtro.descricao) {
 				const small = document.createElement("small");
 				small.className = "text-muted d-block mb-3";
 				small.textContent = filtro.descricao;
-
-				modalBody.appendChild(label);
-				modalBody.appendChild(select);
 				modalBody.appendChild(small);
-			} else {
-				modalBody.appendChild(label);
-				modalBody.appendChild(select);
 			}
+			// Adiciona label e o select
+			modalBody.appendChild(label);
+			modalBody.appendChild(select);
 
 			// Inicializa Choices.js
-			new Choices(select, {
+			const choicesInstance = new Choices(select, {
 				removeItemButton: true,
 				searchEnabled: true,
 				placeholder: true,
 				placeholderValue: 'Selecione...',
 				itemSelectText: '',
 			});
+
+			// Se houver filtros aplicados, adiciona os valores aos selects
+			if (selectedValues.length > 0) {
+				// selectedValues é um array de strings (ex: ["2025"])
+				choicesInstance.setChoiceByValue(selectedValues);
+			}
+
 		});
 	} else {
+		// Se não houver filtros para serem aplicados 
 		modalBody.innerHTML = "<p>Nenhum filtro disponível para este indicador.</p>";
 	}
 
-	// Exibe modal
+	// Exibe modal de filtros 
 	const modal = document.getElementById("modalFilters");
 	modal.dataset.indicatorId = metadata.id;
 	const bsModal = new bootstrap.Modal(modal);
 	bsModal.show();
 }
-
