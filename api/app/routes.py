@@ -7,7 +7,6 @@ from pathlib import Path
 from collections import defaultdict
 from .utils import process_map_indicator
 
-
 router = APIRouter()
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"

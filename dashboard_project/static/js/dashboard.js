@@ -1,6 +1,7 @@
 
-import { plotMapChart, plotLineChart } from './plot.js'
+import { plotChart } from './plot.js'
 import { openInfoModal, openFilterModal } from './modal.js';
+import { createLoader, showChartError } from './utils.js';
 
 // Configurações Variaveis Globais
 const API_BASE = "http://0.0.0.0:8002";
@@ -57,9 +58,11 @@ async function initDashboard(offset = 0, append = false) {
 		createChartCard(indicatorData);
 	}
 
+	// Define se haverá o botão de carregar mais indicadores ou não
 	const btn = document.getElementById("loadMoreBtn");
+	// Se o limite chegou ao total de indicadores, esconde o botão 
 	if (offset + LIMIT >= totalIndicators) {
-		btn.style.display = "none"; // esconde quando não tem mais
+		btn.style.display = "none";
 	} else {
 		btn.style.display = "inline-block"; //mostra se ainda tiver
 		btn.disabled = false;
@@ -130,7 +133,9 @@ export function createChartCard(data) {
 			</div>
 		`;
 
+		// Adiciona o card ao elemento
 		container.appendChild(card);
+
 
 		const cardBody = card.querySelector(`[data-chart-id="${chartId}"]`);
 		// Eventos dos botões para abrir os modais de informações e filtros
@@ -138,89 +143,49 @@ export function createChartCard(data) {
 		cardBody.querySelector(".btn-modal-filters").addEventListener("click", () => openFilterModal(data.metadata, data.data_example));
 	}
 
+	// chama a função para plotar o chart
 	plotChart(chartId, data);
 }
 
-
-// LÓGICA CENTRAL: Identificar tipo de gráfico
-function plotChart(chartId, data) {
-	const type = detectChartType(data);
-
-	if (type === "line") {
-		plotLineChart(chartId, data);
-	} else if (type === "map") {
-		plotMapChart(chartId, data);
-	} else {
-		console.warn("Tipo desconhecido:", type);
-	}
-}
-
-// Detectar tipo — com base no metadata
-function detectChartType(data) {
-	const metadata = data.metadata || {};
-	const example = data.data_example || {};
-	const option = example.option_echarts || {};
-	const series = option.series || [];
-
-	// 1) metadata.chart_type definido
-	if (metadata.chart_type === "line") return "line";
-	if (metadata.chart_type === "map") return "map";
-
-	// 2) metadata contém indicadores de mapa
-	if (metadata.geojson || metadata.map_type || metadata.tipo_grafico === "map") {
-		return "map";
-	}
-
-	// 3) NOVA REGRA → visualMap só aparece em mapa temático
-	if (option.visualMap) {
-		return "map";
-	}
-
-	// 4) no data_example → series[].type
-	if (series.length > 0) {
-		const typeInSeries = series[0].type;
-
-		if (typeInSeries === "line") return "line";
-		if (typeInSeries === "map") return "map";
-		if (typeInSeries === "bar") return "bar";
-		if (typeInSeries === "scatter") return "scatter";
-	}
-
-	// 5) Caso especial: séries sem type, mas com "id" + "data" = linha
-	if (series.length > 0 && series[0].data) {
-		return "line";
-	}
-
-	// 6) Fallback final
-	console.warn("Chart type não identificado. Usando 'line' como fallback.");
-	return "line";
-}
-
-
-// filterApply.js
+// Função para realizar filtragem dinamica dos charts
 export function initApplyFiltersButton() {
 	// Ativa a chamada da função ao clicar no botão de aplicação de filtros
 	// tudo isso de forma dinamica
 	document.getElementById("applyFilters").addEventListener("click", async () => {
+		// Seleciona o modalFilters no base.html
 		const modal = document.getElementById("modalFilters");
+		// Seleciona o ID do indicador contigo na tag dataset
 		const indicatorId = modal?.dataset?.indicatorId;
+
 		if (!indicatorId) return;
 
+		// Seleciona a elemento que corresponde ao corpo do MODAL
 		const modalBody = document.getElementById("modalFiltersBody");
+
+		// seleciona todos os selects dentro do modal de filtragem
 		const selects = modalBody.querySelectorAll("select");
 
-		// Monta os filtros para query params
+		// Percorre os selects e guarda os options Selecionados
+		// em paramsOBJ
 		const paramsObj = {};
 		selects.forEach(sel => {
+			// Busca o campo field com o padrão definido no openFilterModal 
+			// o padrão seguindo metadata.json e o raw_data.csv 
+			// nome_option_{id} 
 			const field = sel.dataset.field;
 			const values = Array.from(sel.selectedOptions).map(opt => opt.value);
+			// se existir valores, seta adicona essa chave/valor ao paramsOBJ
 			if (values.length) {
+				// {nome_option_11: 10} - EXEMPLO
 				paramsObj[field] = values;
 			}
 		});
 
+		// Se os parametros forem vazios, não há porque filtrar
+		// e a função para aqui
 		if (!Object.keys(paramsObj).length) return;
 
+		// busca o elemento o card que receberá a atualização do chart 
 		const chartEl = document.getElementById("chart_" + indicatorId);
 		if (!chartEl) return;
 
@@ -234,118 +199,66 @@ export function initApplyFiltersButton() {
 			chartEl.style.position = "relative";
 		}
 
-		// -----------------------------
-		// Loader overlay (com CSS inline para garantir)
-		// -----------------------------
-		const overlay = document.createElement("div");
-		overlay.className = "chart-loader-overlay";
-		overlay.style.position = "absolute";
-		overlay.style.inset = "0"; // top:0;right:0;bottom:0;left:0;
-		overlay.style.display = "flex";
-		overlay.style.alignItems = "center";
-		overlay.style.justifyContent = "center";
-		overlay.style.background = "rgba(255,255,255,0.6)";
-		overlay.style.zIndex = "9999";
+		let overlay = createLoader(chartEl);
 
-		// Spinner (simples)
-		const spinner = document.createElement("div");
-		spinner.style.width = "48px";
-		spinner.style.height = "48px";
-		spinner.style.border = "6px solid rgba(0,0,0,0.12)";
-		spinner.style.borderTop = "6px solid rgba(0,0,0,0.6)";
-		spinner.style.borderRadius = "50%";
-		spinner.style.animation = "spin 1s linear infinite";
-
-		// Keyframes (adiciona uma tag style se não existir)
-		if (!document.getElementById("chart-loader-keyframes")) {
-			const styleTag = document.createElement("style");
-			styleTag.id = "chart-loader-keyframes";
-			styleTag.innerHTML = `
-				@keyframes spin { to { transform: rotate(360deg); } }
-			`;
-			document.head.appendChild(styleTag);
-		}
-
-		overlay.appendChild(spinner);
-		chartEl.appendChild(overlay);
-
-		try {
-			// Monta query string
-			const q = [];
-			for (const field in paramsObj) {
-				paramsObj[field].forEach(v => {
-					q.push(`${encodeURIComponent(field)}=${encodeURIComponent(v)}`);
-				});
-			}
-			const queryString = q.join("&");
-			const url = `http://localhost:8002/indicators/${indicatorId}/filter?${queryString}`;
-
-			const res = await fetch(url);
-
-			if (!res.ok) {
-				// tenta pegar json de erro
-				let errText = `${res.status} ${res.statusText}`;
-				try {
-					const errJson = await res.json();
-					errText += ` - ${JSON.stringify(errJson)}`;
-				} catch (e) { }
-				console.error("Erro na requisição:", errText);
-				throw new Error(errText);
-			}
-
-			const data = await res.json();
-
-			// Tenta chamar createChartCard de duas formas possíveis:
-			// 1) função nomeada importada/declared: createChartCard(data, indicatorId)
-			// 2) função global: window.createChartCard(data, indicatorId)
-			let called = false;
-			try {
-				if (typeof createChartCard === "function") {
-					createChartCard(data, indicatorId);
-					called = true;
-				}
-			} catch (e) {
-				// não faz nada, tenta window abaixo
-			}
-
-			if (!called && typeof window !== "undefined" && typeof window.createChartCard === "function") {
-				window.createChartCard(data, indicatorId);
-				called = true;
-			}
-
-			// Se nenhuma existir, faz um fallback: atualiza o conteúdo do card com json
-			if (!called) {
-				console.warn("createChartCard não encontrada — usando fallback visual.");
-				// Mantém a estrutura do card e substitui apenas a área do gráfico:
-				// supondo que o chartEl é o container do gráfico, limpamos e inserimos um pre
-				chartEl.innerHTML = `<pre style="padding:10px; font-size:13px; white-space:pre-wrap;">${JSON.stringify(data, null, 2)}</pre>`;
-			}
-
-		} catch (err) {
-			console.error("Erro ao aplicar filtros:", err);
-			// Exibe erro no chart (opcional)
-			chartEl.querySelectorAll(".chart-error").forEach(n => n.remove());
-			const errNode = document.createElement("div");
-			errNode.className = "chart-error";
-			errNode.style.position = "absolute";
-			errNode.style.top = "8px";
-			errNode.style.left = "8px";
-			errNode.style.background = "rgba(255,0,0,0.08)";
-			errNode.style.padding = "6px 8px";
-			errNode.style.borderRadius = "4px";
-			errNode.style.fontSize = "12px";
-			errNode.style.zIndex = "10000";
-			errNode.textContent = "Erro ao carregar dados. Veja console.";
-			chartEl.appendChild(errNode);
-		} finally {
-			// Remove overlay e reativa controles
-			overlay.remove();
-			applyButton.disabled = false;
-			selects.forEach(s => s.disabled = false);
-		}
+		await applyFiltersRequest({
+			indicatorId,
+			paramsObj,
+			chartEl,
+			overlay,
+			applyButton,
+			selects,
+		});
 
 		// Fecha modal (depois do fetch)
 		const bsModal = bootstrap.Modal.getInstance(modal);
 		if (bsModal) bsModal.hide();
 	});
 }
+
+
+// Função para montar a query para filtragem de dados
+async function applyFiltersRequest({ indicatorId, paramsObj, chartEl, overlay, applyButton, selects, }) {
+	try {
+		// Monta query string
+		const q = [];
+		for (const field in paramsObj) {
+			paramsObj[field].forEach(v => {
+				q.push(`${encodeURIComponent(field)}=${encodeURIComponent(v)}`);
+			});
+		}
+
+		const queryString = q.join("&");
+		// após montar a query assume a forma de 
+
+		const url = `http://localhost:8002/indicators/${indicatorId}/filter?${queryString}`;
+		// indicators/1299/filter?nome_option_f3=Centro%20Oeste&nome_option_f1=Abadi%C3%A2nia
+
+		const res = await fetch(url);
+
+		if (!res.ok) {
+			let errText = `${res.status} ${res.statusText}`;
+			try {
+				const errJson = await res.json();
+				errText += ` - ${JSON.stringify(errJson)}`;
+			} catch (e) { }
+			console.error("Erro na requisição:", errText);
+			throw new Error(errText);
+		}
+
+		const data = await res.json();
+
+		createChartCard(data, indicatorId);
+
+
+	} catch (err) {
+		showChartError(chartEl);
+	} finally {
+		overlay.remove();
+		applyButton.disabled = false;
+		selects.forEach(s => s.disabled = false);
+	}
+
+}
+
+

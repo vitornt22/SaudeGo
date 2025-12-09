@@ -1,4 +1,4 @@
-// GRÁFICO DE LINHA
+// Plota Gráfico de Linha
 export function plotLineChart(chartId, data) {
 	const dom = document.getElementById(chartId);
 	const chart = echarts.init(dom);
@@ -28,7 +28,7 @@ export function plotLineChart(chartId, data) {
 }
 
 
-// GRÁFICO DE MAPA (GOIÁS)
+// Plota Gráfico de Mapas
 export async function plotMapChart(chartId, data) {
 	try {
 		const dom = document.getElementById(chartId);
@@ -112,8 +112,27 @@ export async function plotMapChart(chartId, data) {
 	}
 }
 
+// LÓGICA CENTRAL: Identificar tipo de gráfico
+export function plotChart(chartId, data) {
+	// Chama a função para detectar tipo de chart que será plotado
+	const type = detectChartType(data);
+
+	// Nos indicadores repassados, percebi os 2 padrões que são 
+	// LineChart e MapChart
+	if (type === "line") {
+		plotLineChart(chartId, data);
+	} else if (type === "map") {
+		plotMapChart(chartId, data);
+	} else {
+		console.warn("Tipo desconhecido:", type);
+	}
+}
+
+
 // Detectar tipo — com base no metadata
 export function detectChartType(data) {
+	// Nessa função detectamos o tipo de chart que será plotado
+	// os padrões observados no metada.json são listado em sequencia abaixo
 	const metadata = data.metadata || {};
 	const example = data.data_example || {};
 	const option = example.option_echarts || {};
@@ -128,7 +147,7 @@ export function detectChartType(data) {
 		return "map";
 	}
 
-	// 3) NOVA REGRA → visualMap só aparece em mapa temático
+	// 3) visualMap só aparece em mapa temático
 	if (option.visualMap) {
 		return "map";
 	}
@@ -154,15 +173,3 @@ export function detectChartType(data) {
 }
 
 
-// LÓGICA CENTRAL: Identificar tipo de gráfico
-export function plotChart(chartId, data) {
-	const type = detectChartType(data);
-
-	if (type === "line") {
-		plotLineChart(chartId, data);
-	} else if (type === "map") {
-		plotMapChart(chartId, data);
-	} else {
-		console.warn("Tipo desconhecido:", type);
-	}
-}

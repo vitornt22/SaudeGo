@@ -52,6 +52,9 @@ export function openFilterModal(metadata, appliedData) {
 			select.className = "form-select mb-1";
 			select.name = filtro.nome;
 			// Essa lógica foi percebida analizando o raw_data.json
+			// é o nome dos campos de opções de filtragem
+			// esse valor vai ser obtido na hora de clicar na opção filtrar
+			// e utilizo ele para organizar as querystringd
 			select.dataset.field = `nome_option_f${filtro.id_filtro}`;
 			select.multiple = true;
 
