@@ -1,54 +1,65 @@
-![Logo Indra](img/INDRAGROUP_LOGO.png)
-***
-# Teste Técnico
-## Programador Full Stack Pleno (Python/Django)
+# 📊 README: Backend de Indicadores Estatísticos
 
-### Introdução
-Este teste é direcionado para profissionais que desejam atuar como Programador Full Stack Pleno (Python/Django) na Indra Group. 
+Este _backend_, construído com **FastAPI** e **Pandas**, é responsável por servir dados dinâmicos para visualizações de gráficos (séries históricas, mapas) baseando-se em arquivos estáticos (CSV e JSON). Ele atua como um motor de processamento, aplicando filtros e formatando os dados para consumo no _frontend_ (ECharts).
 
-O processo seletivo prevê a contratação de 1 profissional para atuação em projetos de Desenvolvimento Full-Stack na [Secretaria de Estado da Saúde de Goiás](https://www.saude.go.gov.br/).
+---
 
-### Contextualização
-Exite atualmente, uma aplicação chamada [Saúde GO 360](https://360.saude.go.gov.br/frontend/). Essa aplicação, construída em Django, busca exibir os diversos indicadores utilizados pela SES-GO em uma plataforma única, interativa e personalizável para cada usuário. Ela funciona consumindo de uma API desenvolvida internamente, que agrega os metadados e dados de tais indicadores.
+## 🏗️ 1. Estrutura e Fontes de Dados
 
-Ou seja, existe esse ambiente composto por uma aplicação django que exibe os indicadores retornados por uma API. Esses produtos são de extrema importância para a gestão atual, e é necessário que ele siga evoluindo sendo melhorado.
+O sistema opera com base em uma estrutura de arquivos de fácil manutenção. O diretório **`data/`** é o coração da aplicação.
 
-## Objetivo
-Planejar e implementar uma arquitetura que permita a consulta dinâmica aos dados presentes nos arquivos de dados disponíveis. A solução deve prover uma interface que exiba os dados e metadados dos indicadores, possibilitando a aplicação de filtros em tempo de execução da página.
+| Caminho                               | Conteúdo e Finalidade                                                                                                  |
+| :------------------------------------ | :--------------------------------------------------------------------------------------------------------------------- |
+| **`data/ind_{ID}/metadata.json`**     | Contém a ficha técnica do indicador, nome, fontes e a estrutura base das configurações do gráfico (`option_echarts`).  |
+| **`data/ind_{ID}/data_example.json`** | Estrutura de inicialização e **registro de filtros aplicados** (`applyed_filters`).                                    |
+| **`data/ind_{ID}/raw_data.csv`**      | **Fonte Primária de Dados.** Contém os dados brutos, tabulares e desagregados que serão lidos e filtrados pelo Pandas. |
+| **`data/maps/*.json`**                | Arquivos GeoJSON necessários para desenhar mapas temáticos (ex: limites de municípios).                                |
 
-A arquitetura deverá contar com dois serviços:
+---
 
-1. Uma API servindo os metadados e dados presentes na pasta `data`;
-2. Uma aplicação Django que é um dashboard que mostre os gráficos dos JSONs, inclusive aplicando filtros, usando eCharts.
+## 🛣️ 2. Endpoints (Rotas da API)
 
-É necessário que essa aplicação esteja pronta para ser executada, contando com os arquivos para configuração de ambiente execução utilizando Dockers.
+### 2.1. Acesso à Informação Base
 
-### Dados Disponíveis
-Na pasta `data` deste repositório há 5 pastas referentes à 5 Indicadores. Dentro de cada pasta, existem os seguintes arquivos:
+| Rota               | Método | Descrição                                                                                                                            |
+| :----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| `/indicators`      | `GET`  | Lista IDs dos indicadores disponíveis com suporte a **paginação** (`limit`, `offset`).                                               |
+| `/indicators/{id}` | `GET`  | Retorna o `metadata.json` e `data_example.json` do indicador. Usado para carregar a **ficha técnica** e o estado inicial do gráfico. |
+| `/maps/{map_name}` | `GET`  | Serve arquivos GeoJSON (mapas de fronteiras) diretamente para o _frontend_.                                                          |
 
-* `metadata.json`: que traz um conjunto de metadados referentes ao Indicador;
-* `data_example.json`: que traz um exemplo dos dados agregados para plotar o Indicador;
-* `raw_data.csv`: que traz os dados brutos, de maneira que seja possível a aplicação dos filtros.
+### 2.2. O Motor de Filtros: `/indicators/{indicator_id}/filter`
 
-Além disso, existe a pasta `maps`, que contêm arquivos GeoJSON para o plot de mapas, caso nescessário. 
+Esta rota é a mais intensiva, pois processa o CSV completo.
 
-### Restrições Técnicas
-- Todas as ferramentas e tecnologias utilizadas na arquitetura devem ser de código aberto (open source);
-- A solução deve ser executada localmente, em ambiente on-premise, utilizando Dockers;
-- Não é permitido o uso de serviços em nuvem (AWS, Azure, GCP, etc).
+#### 📝 Fluxo de Processamento
 
-### Observações Adicionais
-- Considere que o volume de indicadores pode crescer para a casa de milhares;
-- Considere que o volume de dados em cada indicador pode crescer para a casa de centenas de milhões de registros;
-- Cada consulta não deve levar mais do que poucos segundos para ser processada;
-- Além do código, é importante apresentar a documentação da arquitetura (diagramas e texto).
+1.  **Leitura de Arquivos:** Carrega o `metadata.json`, `data_example.json` (como base) e o **`raw_data.csv`** (para o Pandas DataFrame).
+2.  **Agrupamento de Filtros:** Os parâmetros da _query string_ são agrupados por coluna de filtro.
+3.  **Lógica AND/OR:**
+    - Filtros dentro do mesmo campo (ex: selecionar vários anos) são combinados com lógica **OR** (`.isin()` do Pandas).
+    - Filtros de campos diferentes (ex: Ano E Município) são combinados com lógica **AND**.
+4.  **Detecção de Tipo:** Determina se o gráfico resultante deve ser um **Mapa** (`process_map_indicator`) ou uma **Série Histórica/Linha** (lógica padrão).
 
-## Prazo
-O teste deve ser entregue até o dia 10/12/2025.
+---
 
-## Entrega
-Todos os artefatos produzidos deverão ser organizados em um repositório público no GitHub vinculado à sua conta pessoal.
+## 🧭 3. Processamento Dinâmico (Pandas)
 
-Ao final do prazo de entrega do teste, envie o link do repositório com todos os entregáveis para o e-mail [wsmarques@minsait.com](mailto:wsmarques@minsait.com). 
+O _backend_ usa **heurística** para se adaptar a diferentes estruturas de CSVs, procurando por palavras-chave nas colunas para identificar os dados corretos.
 
-Após o recebimento, caso o resultado seja satisfatório, entraremos em contato para agendar uma reunião (última fase do processo seletivo)
+### A. Gráfico de Linha/Série Histórica
+
+A função procura pelas seguintes colunas para montar o gráfico de série temporal:
+
+- **Eixo X (`xAxis_field`):** Busca por colunas contendo `"ano"`.
+- **Eixo Y (`value_field`):** Busca por `"val"`, `"quant"`, `"tx"`.
+- **Série (`category_field`):** Usado para múltiplas linhas (ex: "categoria", "faixa").
+
+### B. Mapa Temático (`process_map_indicator`)
+
+A função converte o DataFrame para o formato exigido pelo mapa (lista de `{name: value}`):
+
+- **Campo de Nome (`name_field`):** Busca por `"mun"` ou `"nome"`.
+- **Campo de Valor (`value_field`):** Busca por `"val"`, `"tx"`, `"prop"`.
+- **Ajuste Visual (`visualMap`):** Calcula o valor **mínimo** e **máximo** dos dados filtrados para garantir que a escala de cores do mapa esteja sempre correta.
+
+> 💡 **Nota:** Todos os _endpoints_ de dados (filtragem) retornam a estrutura `{"metadata": ..., "data_example": ...}`, garantindo que o _frontend_ sempre tenha a ficha técnica e a configuração atualizada do gráfico.

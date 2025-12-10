@@ -54,3 +54,14 @@ def process_map_indicator(df, metadata, base_example, applyed_filters):
 
     example["data_criacao"] = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
     return {"metadata": metadata, "data_example": example}
+
+
+def is_map_indicator(metadata: dict, base_example: dict) -> bool:
+    """
+    Verifica se o indicador deve ser renderizado como mapa.
+    Retorna True se for gráfico de mapa, False caso contrário.
+    """
+    return (
+        "visualMap" in base_example.get("option_echarts", {}) or
+        ("viz" in metadata and "mapa" in metadata["viz"].lower())
+    )
