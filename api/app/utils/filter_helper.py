@@ -72,35 +72,44 @@ def load_files(DATA_DIR, indicator_id, ):
 
 
 def apply_filters(request, df):
-    # 2. APLICAÇÃO DE FILTROS (Omitido por brevidade)
+    # Aplicação de filtros
     grouped_filters = defaultdict(list)
     for key, value in request.query_params.multi_items():
         if key.startswith("nome_option_f"):
             grouped_filters[key.strip()].append(value.strip())
     applyed_filters = []
 
+    # grouped_filters  {'nome_option_f3': ['Centro Oeste', 'Nordeste'], 'nome_option_f7': ['2011', '2014']}
+
     # Aplica TODOS os filtros
     for param_name, raw_values in grouped_filters.items():
-        try:
-            id_filtro = int(param_name.replace("nome_option_f", ""))
-        except ValueError:
-            continue
+
+        id_filtro = int(param_name.replace("nome_option_f", ""))
+
         filter_column = param_name
-        if filter_column not in df.columns:
-            continue
+
         values = [v for v in raw_values if v]
         applyed_filters.append({"id_filtro": id_filtro, "id_option": values})
+        # ex:  [{'id_filtro': 7, 'id_option': ['2016', '2017']}]
+
+        # transforma os valores a serem filtrados para string
         filter_values = [str(v) for v in values]
+        # transforma a coluna do dataframe em string
         df_column = df[filter_column].astype(str)
+
+        # checa se todos são numericos e permite apenas um ponto decimal (ex: 2020.0)
         if all(v.replace('.', '', 1).isdigit() for v in values):
             try:
+                # se conseguir converter faz a filtragem como numero
                 numeric_values = [float(v) for v in values]
                 df_column = pd.to_numeric(
                     df[filter_column], errors='coerce')
                 filter_values = numeric_values
             except ValueError:
                 pass
+
         # Aplica o filtro atual ao df (Lógica AND)
+        # Resumo: Pega somente as linhas onde a coluna está nos valores escolhidos e não é nula.
         df = df[df_column.isin(filter_values) & df_column.notnull()]
 
     return applyed_filters, df
