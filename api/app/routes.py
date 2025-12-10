@@ -6,7 +6,7 @@ import pandas as pd
 from pathlib import Path
 from collections import defaultdict
 
-from app.utils.filter_helper import apply_filters, build_series_multipla, build_series_simples, load_files, return_df_empty
+from app.utils.filter_helper import apply_filters, build_series_multipla, build_series_simples, detect_validation_fields, is_multi_series, load_files, return_df_empty
 
 from .utils.map_utils import is_map_indicator, process_map_indicator
 
@@ -44,7 +44,6 @@ def list_indicators(limit: int = 10, offset: int = 0):
     # Busca todos os IDs (rápido, pois só lê nomes de pastas)
     all_indicators = get_indicator_folders()
     total_count = len(all_indicators)
-
     # Aplica o fatiamento (slicing)
     # Ex: offset=10, limit=10 -> retorna indicadores do índice 10 ao 20
     start = offset
@@ -95,44 +94,17 @@ def filter_indicator(indicator_id: str, request: Request):
     if is_map_indicator(metadata, base_example):
         return process_map_indicator(df, metadata, base_example, applyed_filters)
 
-    # 4. DETECÇÃO DE CAMPOS E VALIDAÇÃO
-    xAxis_field = None
-    category_field = None
-    value_field = None
-    df_cols = df.columns.tolist()
-
-    if not xAxis_field or xAxis_field not in df_cols:
-        xAxis_field = next(
-            (c for c in df_cols if c == 'nome_option_f7' or "ano" in c.lower()), df_cols[0])
-    if not category_field or category_field not in df_cols:
-        category_field = next((c for c in df_cols if "cat" in c.lower(
-        ) or "faixa" in c.lower()), df_cols[1] if len(df_cols) > 1 else "__NO_CATEGORY__")
-    if not value_field or value_field not in df_cols:
-        value_field = next((c for c in df_cols if "val" in c.lower(
-        ) or "quant" in c.lower() or "tx" in c.lower()), df_cols[-1])
-
-    if xAxis_field not in df_cols or value_field not in df_cols:
-        example = base_example.copy()
-        example["applyed_filters"] = applyed_filters
-        example["option_echarts"]["xAxis"] = {"data": []}
-        example["option_echarts"]["series"] = []
-        example["data_criacao"] = pd.Timestamp.now().strftime(
-            "%Y-%m-%d %H:%M:%S")
-        return {"metadata": metadata, "data_example": example}
-
-    # 5. CONDIÇÃO CENTRAL: DETECÇÃO DE TIPO
-    viz_type = metadata.get("viz", "").lower()
-    # Se o metadata for SIMPLES, ou se não houver um category_field válido, é Simples.
-    is_multi_series = ("multipla" in viz_type or "múltipla" in viz_type)
-
-    # 6. ORQUESTRAÇÃO E CHAMADA ÀS FUNÇÕES AUXILIARES
+    # Detecção dos campos para validação
+    xAxis_field, value_field, category_field = detect_validation_fields(
+        df, base_example, applyed_filters, metadata)
 
     # Prepara o DF com tipos numéricos antes de qualquer agregação nas funções auxiliares
     df[xAxis_field] = pd.to_numeric(df[xAxis_field], errors="coerce")
     df[value_field] = pd.to_numeric(df[value_field], errors="coerce")
     df = df.dropna(subset=[xAxis_field, value_field])
 
-    if is_multi_series:
+    # Preparando o retorno correto com base no tipo de série (simples ou multipla)
+    if is_multi_series(metadata):
         print('entrou if multipla')
         series, example = build_series_multipla(
             df=df, metadata=metadata, base_example=base_example, applyed_filters=applyed_filters,
@@ -148,10 +120,3 @@ def filter_indicator(indicator_id: str, request: Request):
     example["data_criacao"] = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
 
     return {"metadata": metadata, "data_example": example}
-
-# 2. 🟢 Funções Auxiliares (Lógica Isolada)
-
-
-# A. Função para Série Única (Agrega APENAS por Ano)
-
-# Esta função força a agregação APENAS pelo Eixo X.

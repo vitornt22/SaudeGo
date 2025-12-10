@@ -14,6 +14,41 @@ def return_df_empty(base_example, metadata, applyed_filters):
     return {"metadata": metadata, "data_example": example}
 
 
+def is_multi_series(metadata):
+    viz_type = metadata.get("viz", "").lower()
+    # Se o metadata for SIMPLES, ou se não houver um category_field válido, é Simples.
+    return ("multipla" in viz_type or "múltipla" in viz_type)
+
+
+def detect_validation_fields(df, base_example, applyed_filters, metadata):
+    # 4. DETECÇÃO DE CAMPOS E VALIDAÇÃO
+    xAxis_field = None
+    category_field = None
+    value_field = None
+    df_cols = df.columns.tolist()
+
+    if not xAxis_field or xAxis_field not in df_cols:
+        xAxis_field = next(
+            (c for c in df_cols if c == 'nome_option_f7' or "ano" in c.lower()), df_cols[0])
+    if not category_field or category_field not in df_cols:
+        category_field = next((c for c in df_cols if "cat" in c.lower(
+        ) or "faixa" in c.lower()), df_cols[1] if len(df_cols) > 1 else "__NO_CATEGORY__")
+    if not value_field or value_field not in df_cols:
+        value_field = next((c for c in df_cols if "val" in c.lower(
+        ) or "quant" in c.lower() or "tx" in c.lower()), df_cols[-1])
+
+    if xAxis_field not in df_cols or value_field not in df_cols:
+        example = base_example.copy()
+        example["applyed_filters"] = applyed_filters
+        example["option_echarts"]["xAxis"] = {"data": []}
+        example["option_echarts"]["series"] = []
+        example["data_criacao"] = pd.Timestamp.now().strftime(
+            "%Y-%m-%d %H:%M:%S")
+        return {"metadata": metadata, "data_example": example}
+
+    return xAxis_field, value_field, category_field
+
+
 def load_files(DATA_DIR, indicator_id, ):
     # 1. SETUP E CARREGAMENTO DE ARQUIVOS (Omitido por brevidade)
     indicator_folder = DATA_DIR / f"ind_{indicator_id}"
