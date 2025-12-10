@@ -23,7 +23,8 @@ Certifique-se de ter o **Docker** e o **Docker Compose** instalados em sua máqu
 1.  **Clonar o Repositório:**
 
     ```bash
-    # Exemplo: git clone seu-repositorio
+    git clone git@github.com:vitornt22/SaudeGo.git
+
     ```
 
 2.  **Construir e Iniciar os Contêineres:**

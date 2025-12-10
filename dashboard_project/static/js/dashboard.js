@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initApplyFiltersButton();
 });
 
-// Monitora o clique no botão de carregar mais 
-// ao clicar ele muda a paginação e busca os próximos dados com base no LIMIT definido
+// Controle de paginação dos indicadores
 document.getElementById("loadMoreBtn").addEventListener("click", async () => {
 	currentOffset += LIMIT;
 	await initDashboard(currentOffset, true); // append = true
@@ -33,7 +32,6 @@ async function initDashboard(offset = 0, append = false) {
 	if (!append) container.innerHTML = "<h4>Carregando indicadores...</h4>";
 
 	// Busca indicadores com paginação (definida no backend com FASTAPI)
-	// Estrutura vinda do backend 
 	// {
 	//     "indicators": paginated_indicators,
 	//     "total": total_count,
@@ -150,7 +148,6 @@ export function createChartCard(data) {
 // Função para realizar filtragem dinamica dos charts
 export function initApplyFiltersButton() {
 	// Ativa a chamada da função ao clicar no botão de aplicação de filtros
-	// tudo isso de forma dinamica
 	document.getElementById("applyFilters").addEventListener("click", async () => {
 		// Seleciona o modalFilters no base.html
 		const modal = document.getElementById("modalFilters");
@@ -165,13 +162,10 @@ export function initApplyFiltersButton() {
 		// seleciona todos os selects dentro do modal de filtragem
 		const selects = modalBody.querySelectorAll("select");
 
-		// Percorre os selects e guarda os options Selecionados
-		// em paramsOBJ
+		// coleta os filtros escolhidos
 		const paramsObj = {};
 		selects.forEach(sel => {
-			// Busca o campo field com o padrão definido no openFilterModal 
-			// o padrão seguindo metadata.json e o raw_data.csv 
-			// nome_option_{id} 
+			// Busca o campo field com o padrão definido no openFilterModal - nome_option_{id} 
 			const field = sel.dataset.field;
 			const values = Array.from(sel.selectedOptions).map(opt => opt.value);
 			// se existir valores, seta adicona essa chave/valor ao paramsOBJ
@@ -181,8 +175,7 @@ export function initApplyFiltersButton() {
 			}
 		});
 
-		// Se os parametros forem vazios, não há porque filtrar
-		// e a função para aqui
+		// Se os parametros forem vazios a função acaba
 		if (!Object.keys(paramsObj).length) return;
 
 		// busca o elemento o card que receberá a atualização do chart 

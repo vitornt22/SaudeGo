@@ -34,9 +34,7 @@ export async function plotMapChart(chartId, data) {
 		const dom = document.getElementById(chartId);
 		const chart = echarts.init(dom);
 
-		// ============================
 		// 1) DEFINIR MAPA COM BASE NO METADATA
-		// ============================
 		let mapName = "GO_reg"; // fallback
 
 		if (data.metadata) {
@@ -55,17 +53,14 @@ export async function plotMapChart(chartId, data) {
 			}
 		}
 
-		// ============================
 		// 2) Buscar mapa da API
-		// ============================
 		const geo = await fetch(`http://localhost:8002/maps/${mapName}`)
 			.then(res => res.json());
 
 		echarts.registerMap("goias", geo);
 
-		// ============================
+
 		// 3) Extrair dados
-		// ============================
 		const seriesData =
 			data.data_example?.option_echarts?.series?.[0]?.data || [];
 
@@ -80,9 +75,8 @@ export async function plotMapChart(chartId, data) {
 				max: Math.max(...seriesData.map(d => d.value))
 			};
 
-		// ============================
+
 		// 4) Configurar gráfico
-		// ============================
 		const option = {
 			tooltip: { trigger: "item" },
 

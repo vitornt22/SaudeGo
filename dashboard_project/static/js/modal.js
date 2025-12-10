@@ -22,11 +22,9 @@ export function openFilterModal(metadata, appliedData) {
 	const modalBody = document.getElementById("modalFiltersBody");
 	modalBody.innerHTML = ""; // Limpar antes de colocar os filtros dinamicamente
 
-	// 1. Mapear os filtros aplicados (id_filtro -> [valor_da_opcao_em_string, ...])
-	// Nessa parte a função percorrer o APPLYED_FILTERS do data_example e adiciona
-	// todas as opções pré selecionadas para seus respectivos id
-	// A lógica é relacionar os ids selecionados com os filtros do metadata.json
-	// e adicionar ao formulário quando for aberto...
+	// Reconstrói os filtros já aplicados:
+	// percorre `applyed_filters`, encontra cada filtro no metadata
+	// e pré-seleciona as opções correspondentes no formulário.
 	const appliedOptionsMap = new Map();
 	if (appliedData && appliedData.applyed_filters && appliedData.applyed_filters.length) {
 		appliedData.applyed_filters.forEach(filter => {
@@ -40,7 +38,6 @@ export function openFilterModal(metadata, appliedData) {
 	if (metadata.filtros && metadata.filtros.length) {
 		metadata.filtros.forEach(filtro => {
 			// Busca as opções aplicadas para o filtro atual( procura na lista de filtros adicionado)
-			// diretamente do applyed_filters
 			const selectedValues = appliedOptionsMap.get(filtro.id_filtro) || [];
 
 			// Criação de Label e Select 
@@ -51,10 +48,8 @@ export function openFilterModal(metadata, appliedData) {
 			const select = document.createElement("select");
 			select.className = "form-select mb-1";
 			select.name = filtro.nome;
-			// Essa lógica foi percebida analizando o raw_data.json
-			// é o nome dos campos de opções de filtragem
-			// esse valor vai ser obtido na hora de clicar na opção filtrar
-			// e utilizo ele para organizar as querystringd
+			// Identifica o nome do campo usado para filtragem (observado no raw_data.json).
+			// Esse valor será usado ao aplicar o filtro para montar corretamente a querystring.
 			select.dataset.field = `nome_option_f${filtro.id_filtro}`;
 			select.multiple = true;
 
