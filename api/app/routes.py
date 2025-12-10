@@ -88,7 +88,8 @@ def filter_indicator(indicator_id: str, request: Request):
 
     # Retorna o df vazio caso nao haja resultados na filtragem
     if df.empty:
-        return_df_empty(base_example, metadata, applyed_filters)
+        example = return_df_empty(base_example, applyed_filters)
+        return {"metadata": metadata, "data_example": example}
 
     # chama a função especifica pra retorno de mapa caso o tipo de chart seja esse
     if is_map_indicator(metadata, base_example):
@@ -105,9 +106,8 @@ def filter_indicator(indicator_id: str, request: Request):
 
     # Preparando o retorno correto com base no tipo de série (simples ou multipla)
     if is_multi_series(metadata):
-        print('entrou if multipla')
         series, example = build_series_multipla(
-            df=df, metadata=metadata, base_example=base_example, applyed_filters=applyed_filters,
+            df=df, base_example=base_example, applyed_filters=applyed_filters,
             xAxis_field=xAxis_field, category_field=category_field, value_field=value_field
         )
     else:
@@ -116,7 +116,7 @@ def filter_indicator(indicator_id: str, request: Request):
             xAxis_field=xAxis_field, value_field=value_field
         )
 
+    # cria o novo "data_example pra plotar o chart no frontend"
     example["option_echarts"]["series"] = series
     example["data_criacao"] = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
-
     return {"metadata": metadata, "data_example": example}

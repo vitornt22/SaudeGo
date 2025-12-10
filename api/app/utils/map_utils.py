@@ -1,24 +1,4 @@
-
 import pandas as pd
-
-
-def process_map_indicator(df, metadata, base_example, applyed_filters):
-    """
-    Processa o DataFrame para o formato de Mapa (GeoJSON data array).
-    """
-    example = base_example.copy()
-    example["applyed_filters"] = applyed_filters
-
-    name_field, value_field = serie_map_organize(df, example, metadata)
-
-    # PREPARAÇÃO FINAL DO DF (Mapas não usam XAxis, mas precisam do valor numérico)
-    df[value_field] = pd.to_numeric(df[value_field], errors="coerce")
-    df = df.dropna(subset=[name_field, value_field])
-
-    example = build_map_series(df, example, name_field, value_field)
-
-    example["data_criacao"] = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
-    return {"metadata": metadata, "data_example": example}
 
 
 def is_map_indicator(metadata: dict, base_example: dict) -> bool:
@@ -27,6 +7,24 @@ def is_map_indicator(metadata: dict, base_example: dict) -> bool:
         "visualMap" in base_example.get("option_echarts", {}) or
         ("viz" in metadata and "mapa" in metadata["viz"].lower())
     )
+
+
+def process_map_indicator(df, metadata, base_example, applyed_filters):
+    # Processa o DataFrame para o formato de Mapa (GeoJSON data array).
+    example = base_example.copy()
+    example["applyed_filters"] = applyed_filters
+
+    name_field, value_field = serie_map_organize(df, example, metadata)
+
+    # PREPARAÇÃO FINAL DO DF (Mapas não usam XAxis, mas precisam do valor numérico)
+    df[value_field] = pd.to_numeric(df[value_field], errors="coerce")
+    # remove linhas com valores invalidos
+    df = df.dropna(subset=[name_field, value_field])
+
+    example = build_map_series(df, example, name_field, value_field)
+
+    example["data_criacao"] = pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
+    return {"metadata": metadata, "data_example": example}
 
 
 def build_map_series(df, example, name_field, value_field):
@@ -60,7 +58,6 @@ def build_map_series(df, example, name_field, value_field):
 
 
 def serie_map_organize(df, example, metadata):
-
     df_cols = df.columns.tolist()
     # Logica para Mapa: Assume-se que o nome do Município está na primeira coluna
     # e o valor está na última ou na coluna 'tx'/'quant'.
