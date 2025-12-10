@@ -23,7 +23,7 @@ def apply_filters(df, grouped_filters):
 
         filter_column = param_name
 
-        # checa se  o padrão de nome_option_f{id_filtro} existe no csv
+        # checa se  a coluna a ser filtrada existe no csv
         if filter_column not in df.columns:
             continue
 
