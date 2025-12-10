@@ -6,7 +6,7 @@ import pandas as pd
 from pathlib import Path
 from collections import defaultdict
 
-from api.app.utils.filter_helper import build_series_multipla, build_series_simples
+from app.utils.filter_helper import apply_filters, build_series_multipla, build_series_simples, load_files, return_df_empty
 
 from .utils.map_utils import is_map_indicator, process_map_indicator
 
@@ -81,69 +81,24 @@ def get_indicator(indicator_id: str):
 
 @router.get("/indicators/{indicator_id}/filter")
 def filter_indicator(indicator_id: str, request: Request):
-    # 1. SETUP E CARREGAMENTO DE ARQUIVOS (Omitido por brevidade)
-    indicator_folder = DATA_DIR / f"ind_{indicator_id}"
-    csv_path = indicator_folder / "raw_data.csv"
-    metadata_path = indicator_folder / "metadata.json"
-    data_example_path = indicator_folder / "data_example.json"
+    # Carregando os arquivos
+    df, metadata, base_example = load_files(DATA_DIR, indicator_id)
 
-    for path, name in [(csv_path, "raw_data.csv"), (metadata_path, "metadata.json"), (data_example_path, "data_example.json")]:
-        if not path.exists():
-            raise HTTPException(
-                status_code=404, detail=f"{name} não encontrado")
+    # aplicando filtros pela queryString
+    applyed_filters, df = apply_filters(request, df)
 
-    with open(metadata_path, "r", encoding="utf-8") as f:
-        metadata = json.load(f)
-    with open(data_example_path, "r", encoding="utf-8") as f:
-        base_example = json.load(f)
-
-    df = pd.read_csv(csv_path)
-    df.columns = df.columns.str.strip()
-
-    # 2. APLICAÇÃO DE FILTROS (Omitido por brevidade)
-    grouped_filters = defaultdict(list)
-    for key, value in request.query_params.multi_items():
-        if key.startswith("nome_option_f"):
-            grouped_filters[key.strip()].append(value.strip())
-    applyed_filters = []
-    for param_name, raw_values in grouped_filters.items():
-        try:
-            id_filtro = int(param_name.replace("nome_option_f", ""))
-        except ValueError:
-            continue
-        filter_column = param_name
-        if filter_column not in df.columns:
-            continue
-        values = [v for v in raw_values if v]
-        applyed_filters.append({"id_filtro": id_filtro, "id_option": values})
-        filter_values = [str(v) for v in values]
-        df_column = df[filter_column].astype(str)
-        if all(v.replace('.', '', 1).isdigit() for v in values):
-            try:
-                numeric_values = [float(v) for v in values]
-                df_column = pd.to_numeric(
-                    df[filter_column], errors='coerce')
-                filter_values = numeric_values
-            except ValueError:
-                pass
-        df = df[df_column.isin(filter_values) & df_column.notnull()]
-
-    # 3. VERIFICAÇÃO DE DF VAZIO / DETECÇÃO DE MAPA
+    # Retorna o df vazio caso nao haja resultados na filtragem
     if df.empty:
-        example = base_example.copy()
-        example["applyed_filters"] = applyed_filters
-        example["option_echarts"]["xAxis"] = {"data": []}
-        example["option_echarts"]["series"] = []
-        example["data_criacao"] = pd.Timestamp.now().strftime(
-            "%Y-%m-%d %H:%M:%S")
-        return {"metadata": metadata, "data_example": example}
+        return_df_empty(base_example, metadata, applyed_filters)
+
+    # chama a função especifica pra retorno de mapa caso o tipo de chart seja esse
     if is_map_indicator(metadata, base_example):
         return process_map_indicator(df, metadata, base_example, applyed_filters)
 
     # 4. DETECÇÃO DE CAMPOS E VALIDAÇÃO
-    xAxis_field = base_example["option_echarts"].get("campo")
-    category_field = base_example["option_echarts"].get("campo_categoria")
-    value_field = base_example["option_echarts"].get("campo_valor")
+    xAxis_field = None
+    category_field = None
+    value_field = None
     df_cols = df.columns.tolist()
 
     if not xAxis_field or xAxis_field not in df_cols:
@@ -167,8 +122,6 @@ def filter_indicator(indicator_id: str, request: Request):
 
     # 5. CONDIÇÃO CENTRAL: DETECÇÃO DE TIPO
     viz_type = metadata.get("viz", "").lower()
-    print("\n\n\n\n\n\nn\n\ viz type: ", viz_type, "\n\n\nn\n\n")
-
     # Se o metadata for SIMPLES, ou se não houver um category_field válido, é Simples.
     is_multi_series = ("multipla" in viz_type or "múltipla" in viz_type)
 
